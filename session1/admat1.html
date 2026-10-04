@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
 
   <style>
-    /* Complete self-contained styling to guarantee subtle slate borders, generous padding, and robust layout */
+    /* Robust, self-contained styling for resilient rendering across all browsers */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -23,8 +23,8 @@
 
     /* Container Canvas */
     .deck-container {
-      width: 96%;
-      max-width: 1320px;
+      width: 98%;
+      max-width: 1350px;
       margin: 16px auto;
     }
     .moodle-deck-canvas {
@@ -81,24 +81,33 @@
     /* Content Area */
     .deck-body {
       background-color: #ffffff;
-      padding: 28px 32px;
+      padding: 24px 28px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 24px;
     }
     @media (max-width: 640px) {
       .deck-body {
-        padding: 18px 16px;
-        gap: 22px;
+        padding: 16px 14px;
+        gap: 18px;
       }
     }
 
-    /* Section Separator */
-    .section-separator {
-      border: 0;
-      border-top: 1px solid #e2e8f0;
-      margin: 8px 0;
-      width: 100%;
+    /* Unified Section Panels: Clean, shaded background container for distinct section separation */
+    .section-panel {
+      background-color: #f8fafc; /* subtle slate tint for elegant contrast */
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (max-width: 640px) {
+      .section-panel {
+        padding: 14px 14px;
+      }
     }
 
     /* Section Headers */
@@ -108,7 +117,6 @@
       gap: 10px;
       padding-bottom: 8px;
       border-bottom: 1px solid #e2e8f0;
-      margin-bottom: 14px;
     }
     .section-badge {
       background-color: #b85d42;
@@ -120,7 +128,7 @@
       letter-spacing: 0.05em;
     }
     .section-title {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       color: #b85d42;
       text-transform: uppercase;
@@ -130,23 +138,23 @@
     .section-intro {
       font-size: 12px;
       color: #64748b;
-      margin: 0 0 16px 0;
+      margin: 0;
       line-height: 1.5;
     }
 
-    /* Section 1: Compact Left-Aligned Videos */
-    .video-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: flex-start;
-      align-items: stretch;
-      margin-left: 0;
-      margin-right: auto;
+    /* Section 1: Evenly Spaced 3-Column Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 720px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .compact-video-card {
-      width: 100%;
-      max-width: 340px;
       background-color: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
@@ -155,6 +163,12 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      min-width: 0; /* Prevents grid blowout */
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .compact-video-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
     .video-header {
       display: flex;
@@ -177,6 +191,7 @@
       padding: 2px 8px;
       border-radius: 9999px;
       white-space: nowrap;
+      shrink: 0;
     }
     .tag-amber {
       background-color: #fef3c7;
@@ -186,15 +201,19 @@
       background-color: #d1fae5;
       color: #065f46;
     }
+    .tag-sky {
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
     .video-player-container {
       position: relative;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 ratio */
+      aspect-ratio: 16 / 9;
       background-color: #0f172a;
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid #e2e8f0;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
     }
     .video-player-container iframe {
       position: absolute;
@@ -203,6 +222,7 @@
       width: 100%;
       height: 100%;
       border: 0;
+      display: block;
     }
     .video-caption {
       font-size: 11px;
@@ -211,22 +231,29 @@
       line-height: 1.45;
     }
 
-    /* Section 2: News Articles */
+    /* Section 2: News Articles Grid (2 Equal Columns) */
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 680px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .news-card {
       background-color: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 20px 22px;
+      padding: 18px 20px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 16px;
+      gap: 14px;
+      min-width: 0;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .news-card:hover {
@@ -270,7 +297,7 @@
       align-items: center;
       justify-content: space-between;
       border-top: 1px solid #f1f5f9;
-      padding-top: 14px;
+      padding-top: 12px;
     }
     .read-time {
       font-size: 11px;
@@ -283,8 +310,8 @@
       gap: 6px;
       background-color: #b85d42;
       color: #ffffff;
-      padding: 7px 14px;
-      border-radius: 8px;
+      padding: 6px 13px;
+      border-radius: 7px;
       font-size: 11px;
       font-weight: 700;
       text-decoration: none;
@@ -295,23 +322,35 @@
       background-color: #9e4e37;
     }
 
-    /* Section 3: Web Resources (6 Items) */
+    /* Section 3: Web Resources (6 Items in 3x2 Grid) */
     .resources-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 580px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .resource-card {
       background-color: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 18px 20px;
+      padding: 16px 18px;
       text-decoration: none;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
+      min-width: 0;
       transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
     .resource-card:hover {
@@ -344,14 +383,14 @@
       font-size: 13px;
       font-weight: 700;
       color: #1e293b;
-      margin: 4px 0;
+      margin: 3px 0;
       transition: color 0.15s ease;
     }
     .resource-card:hover .resource-name {
       color: #b85d42;
     }
     .resource-desc {
-      font-size: 11.5px;
+      font-size: 11px;
       color: #64748b;
       line-height: 1.5;
       margin: 0;
@@ -370,7 +409,7 @@
       border: 1px solid #e2e8f0;
       background-color: #f8fafc;
       border-radius: 12px;
-      padding: 14px 18px;
+      padding: 12px 18px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 12px 16px;
@@ -441,7 +480,7 @@
     <div class="deck-body">
       
       <!-- Introduction & Badge Area -->
-      <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;">
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid #f1f5f9;">
         <div>
           <span style="display: inline-block; background-color: #b85d42; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 11px; font-weight: 800; border: 1px solid #9e4e37; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
             GSEA Supplementary Resource Hub
@@ -456,9 +495,9 @@
       </div>
 
       <!-- ========================================================================= -->
-      <!-- SECTION 1: YOUTUBE VIDEO VIEWERS (Left-Aligned, Compact Side-by-Side)    -->
+      <!-- SECTION 1: YOUTUBE VIDEO VIEWERS (Shaded Panel, 3 Evenly Spaced)          -->
       <!-- ========================================================================= -->
-      <section>
+      <section class="section-panel">
         <div class="section-header">
           <span class="section-badge">01</span>
           <h3 class="section-title">Video Viewers &amp; Analysis</h3>
@@ -467,8 +506,8 @@
           Watch the accompanying video clips below and take notes on relevant travel collocations, tone, and arguments.
         </p>
 
-        <!-- Compact Video Row (Left-aligned, ~340px each, sitting side-by-side) -->
-        <div class="video-row">
+        <!-- 3-Column Evenly Spaced Video Grid across the row -->
+        <div class="video-grid">
           
           <!-- Video 1 -->
           <div class="compact-video-card">
@@ -477,10 +516,10 @@
               <span class="tag-pill tag-amber">Discussion</span>
             </div>
             
-            <!-- 🔗 [LINK 1/10: VIDEO 1 EMBED URL] - Replace src below with your YouTube embed link -->
+            <!-- 🔗 [LINK 1/11: VIDEO 1 EMBED URL] - Replace src below with your YouTube embed link -->
             <div class="video-player-container">
               <iframe 
-                src="https://www.youtube.com/embed/ScMzIvxBSi4" 
+                src="https://www.youtube.com/embed/a_fS9ddgoGs" 
                 title="YouTube video player 1 - Sustainable Aviation" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
@@ -499,7 +538,7 @@
               <span class="tag-pill tag-emerald">Strategy</span>
             </div>
 
-            <!-- 🔗 [LINK 2/10: VIDEO 2 EMBED URL] - Replace src below with your YouTube embed link -->
+            <!-- 🔗 [LINK 2/11: VIDEO 2 EMBED URL] - Replace src below with your YouTube embed link -->
             <div class="video-player-container">
               <iframe 
                 src="https://www.youtube.com/embed/ScMzIvxBSi4" 
@@ -514,16 +553,35 @@
             </p>
           </div>
 
+          <!-- Video 3 -->
+          <div class="compact-video-card">
+            <div class="video-header">
+              <span class="video-title" title="Video 3: Airport Infrastructure & DD&RS">Video 3: Airport Operations</span>
+              <span class="tag-pill tag-sky">Case Study</span>
+            </div>
+
+            <!-- 🔗 [LINK 3/11: VIDEO 3 EMBED URL] - Replace src below with your YouTube embed link -->
+            <div class="video-player-container">
+              <iframe 
+                src="https://www.youtube.com/embed/ScMzIvxBSi4" 
+                title="YouTube video player 3 - Airport Infrastructure & Operations" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <p class="video-caption">
+              <strong>Focus:</strong> Evaluate regional transit hubs, electric ground support equipment (e-GSE), and terminal energy efficiency.
+            </p>
+          </div>
+
         </div>
       </section>
 
-      <!-- Clear Section Divider -->
-      <hr class="section-separator">
-
       <!-- ========================================================================= -->
-      <!-- SECTION 2: FEATURED NEWS & CURRENT AFFAIRS (2 Articles)                   -->
+      <!-- SECTION 2: FEATURED NEWS & CURRENT AFFAIRS (2 Equal Columns)              -->
       <!-- ========================================================================= -->
-      <section>
+      <section class="section-panel">
         <div class="section-header">
           <span class="section-badge">02</span>
           <h3 class="section-title">Featured News &amp; Current Affairs</h3>
@@ -551,7 +609,7 @@
             
             <div class="news-footer">
               <span class="read-time">Estimated read: 4 mins</span>
-              <!-- 🔗 [LINK 3/10: NEWS ARTICLE 1 URL] - Replace href below with Article 1 link -->
+              <!-- 🔗 [LINK 4/11: NEWS ARTICLE 1 URL] - Replace href below with Article 1 link -->
               <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer" class="article-btn">
                 <span>Read Article</span>
                 <span aria-hidden="true">→</span>
@@ -576,7 +634,7 @@
             
             <div class="news-footer">
               <span class="read-time">Estimated read: 5 mins</span>
-              <!-- 🔗 [LINK 4/10: NEWS ARTICLE 2 URL] - Replace href below with Article 2 link -->
+              <!-- 🔗 [LINK 5/11: NEWS ARTICLE 2 URL] - Replace href below with Article 2 link -->
               <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer" class="article-btn">
                 <span>Read Article</span>
                 <span aria-hidden="true">→</span>
@@ -587,13 +645,10 @@
         </div>
       </section>
 
-      <!-- Clear Section Divider -->
-      <hr class="section-separator">
-
       <!-- ========================================================================= -->
-      <!-- SECTION 3: CURATED WEB RESOURCES & REFERENCES (6 Links)                  -->
+      <!-- SECTION 3: CURATED WEB RESOURCES & REFERENCES (6 Items, 3x2 Grid)        -->
       <!-- ========================================================================= -->
-      <section>
+      <section class="section-panel">
         <div class="section-header">
           <span class="section-badge">03</span>
           <h3 class="section-title">Curated Web Resources &amp; References</h3>
@@ -605,7 +660,7 @@
         <div class="resources-grid">
           
           <!-- Resource 1 -->
-          <!-- 🔗 [LINK 5/10: RESOURCE 1 URL] - Replace href below with Resource 1 link -->
+          <!-- 🔗 [LINK 6/11: RESOURCE 1 URL] - Replace href below with Resource 1 link -->
           <a href="https://www.ets.org/toeic.html" target="_blank" rel="noopener noreferrer" class="resource-card">
             <div>
               <div class="resource-header">
@@ -624,7 +679,7 @@
           </a>
 
           <!-- Resource 2 -->
-          <!-- 🔗 [LINK 6/10: RESOURCE 2 URL] - Replace href below with Resource 2 link -->
+          <!-- 🔗 [LINK 7/11: RESOURCE 2 URL] - Replace href below with Resource 2 link -->
           <a href="https://www.iata.org/en/programs/sustainability/" target="_blank" rel="noopener noreferrer" class="resource-card">
             <div>
               <div class="resource-header">
@@ -643,7 +698,7 @@
           </a>
 
           <!-- Resource 3 -->
-          <!-- 🔗 [LINK 7/10: RESOURCE 3 URL] - Replace href below with Resource 3 link -->
+          <!-- 🔗 [LINK 8/11: RESOURCE 3 URL] - Replace href below with Resource 3 link -->
           <a href="https://www.unwto.org/sustainable-development" target="_blank" rel="noopener noreferrer" class="resource-card">
             <div>
               <div class="resource-header">
@@ -662,7 +717,7 @@
           </a>
 
           <!-- Resource 4 -->
-          <!-- 🔗 [LINK 8/10: RESOURCE 4 URL] - Replace href below with Resource 4 link -->
+          <!-- 🔗 [LINK 9/11: RESOURCE 4 URL] - Replace href below with Resource 4 link -->
           <a href="https://dictionary.cambridge.org" target="_blank" rel="noopener noreferrer" class="resource-card">
             <div>
               <div class="resource-header">
@@ -681,7 +736,7 @@
           </a>
 
           <!-- Resource 5 -->
-          <!-- 🔗 [LINK 9/10: RESOURCE 5 URL] - Replace href below with Resource 5 link -->
+          <!-- 🔗 [LINK 10/11: RESOURCE 5 URL] - Replace href below with Resource 5 link -->
           <a href="https://www.bbc.com/travel" target="_blank" rel="noopener noreferrer" class="resource-card">
             <div>
               <div class="resource-header">
@@ -700,7 +755,7 @@
           </a>
 
           <!-- Resource 6 -->
-          <!-- 🔗 [LINK 10/10: RESOURCE 6 URL] - Replace href below with Resource 6 link -->
+          <!-- 🔗 [LINK 11/11: RESOURCE 6 URL] - Replace href below with Resource 6 link -->
           <a href="https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx" target="_blank" rel="noopener noreferrer" class="resource-card">
             <div>
               <div class="resource-header">
@@ -720,9 +775,6 @@
 
         </div>
       </section>
-
-      <!-- Clear Section Divider -->
-      <hr class="section-separator">
 
       <!-- Stylized Skills Footer Area (matches plan1.html) -->
       <div class="vocab-footer">
