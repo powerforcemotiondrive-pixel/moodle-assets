@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Session 1 - Additional Materials &amp; Resources</title>
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Local Build & Remote CDN fallback) -->
+    <link rel="stylesheet" href="../dist/output.css">
     <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
+
+    <!-- Subtle Slate & Generous Padding Style Layer -->
+    <style>
+      /* Guaranteed internal breathing room & subtle slate styling */
+      .card-subtle-slate {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.875rem;
+        padding: 1.35rem 1.5rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-subtle-slate:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+      }
+
+      /* Compact video cards: reduced footprint by >70% */
+      .compact-video-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.875rem;
+        padding: 1rem 1.15rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .video-frame-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background-color: #0f172a;
+      }
+      .video-frame-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Web link cards */
+      .resource-link-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.875rem;
+        padding: 1.25rem 1.35rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .resource-link-card:hover {
+        border-color: #c29b38;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px -2px rgba(194, 155, 56, 0.15);
+      }
+    </style>
 </head>
 <body class="bg-slate-100 min-h-screen">
 
@@ -44,24 +109,24 @@
 
     <!-- Workspace Body -->
     <div class="flex-1 flex flex-col overflow-hidden">
-      <div class="flex-1 bg-white p-4 sm:p-8 flex flex-col justify-between overflow-y-auto">
-        <div class="space-y-8">
+      <div class="flex-1 bg-white p-5 sm:p-8 flex flex-col justify-between overflow-y-auto">
+        <div class="space-y-10">
           
           <!-- Introduction & Badge Area -->
-          <div class="space-y-3">
+          <div class="space-y-3 pb-2 border-b border-slate-100">
             <div class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
               GSEA Supplementary Resource Hub
             </div>
             <h2 class="text-xl sm:text-2xl font-black text-[#b85d42] tracking-tight">
               Session 1 Multimedia, Case Studies &amp; Research Links
             </h2>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-4xl">
               Explore curated audio-visual material, real-world current affairs articles, and authoritative reference portals to expand your vocabulary, deepen your DD&amp;RS insights, and prepare for class discussions.
             </p>
           </div>
 
-          <!-- ================= SECTION 1: TWO YOUTUBE VIDEO VIEWERS ================= -->
-          <section class="space-y-3 pt-2">
+          <!-- ================= SECTION 1: TWO COMPACT YOUTUBE VIDEO VIEWERS ================= -->
+          <section class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
               <span class="bg-[#b85d42] text-white text-xs font-black px-2.5 py-0.5 rounded-md">01</span>
               <h3 class="text-sm sm:text-base font-bold text-[#b85d42] tracking-tight uppercase">
@@ -72,7 +137,8 @@
               Watch the accompanying video clips below and take notes on relevant travel collocations, tone, and arguments.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- Compact, Side-by-Side Video Showcase (Constrained width prevents monster-sized screens) -->
+            <div class="max-w-[760px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 pt-1">
               
               <!-- ============================================================== -->
               <!-- 🔗 [LINK 1/9]: INSERT YOUTUBE VIDEO 1 EMBED URL OR ID HERE     -->
@@ -81,26 +147,25 @@
               <!-- 2. Replace the ID in the src="..." attribute below             -->
               <!-- Example: src="https://www.youtube.com/embed/YOUR_VIDEO_ID"     -->
               <!-- ============================================================== -->
-              <div class="rounded-xl border border-slate-200/80 bg-slate-50/70 p-3.5 shadow-sm flex flex-col space-y-3">
-                <div class="flex items-center justify-between">
-                  <!-- You can edit the Video Title below -->
-                  <span class="text-xs font-bold text-[#b85d42]">Video 1: Sustainable Aviation &amp; Modern Travel</span>
-                  <span class="text-[10px] font-semibold bg-amber-100 text-[#a8842c] px-2 py-0.5 rounded-full">Discussion Point</span>
+              <div class="compact-video-card space-y-3">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-bold text-slate-800 line-clamp-1">Video 1: Sustainable Aviation</span>
+                  <span class="text-[10px] font-semibold bg-amber-100 text-[#a8842c] px-2 py-0.5 rounded-full shrink-0">Discussion</span>
                 </div>
-                <!-- 16:9 Responsive Video Embed Container -->
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem;" class="shadow-inner bg-black">
+
+                <!-- 16:9 Responsive Compact Video Player -->
+                <div class="video-frame-container shadow-inner">
                   <iframe 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
                     src="https://www.youtube.com/embed/ScMzIvxBSi4" 
                     title="YouTube video player 1" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                   </iframe>
                 </div>
-                <!-- You can edit the Focus / Note below -->
-                <div class="text-[11px] text-slate-600 leading-normal">
-                  <strong>Key Focus:</strong> Pay attention to industry terminology regarding carbon offsetting, sustainable fleet modernization, and passenger choices.
-                </div>
+
+                <p class="text-[11px] text-slate-500 leading-normal pt-1">
+                  <strong>Focus:</strong> Industry terminology regarding carbon offsetting, sustainable fleet modernization, and passenger choices.
+                </p>
               </div>
 
               <!-- ============================================================== -->
@@ -110,33 +175,32 @@
               <!-- 2. Replace the ID in the src="..." attribute below             -->
               <!-- Example: src="https://www.youtube.com/embed/YOUR_VIDEO_ID"     -->
               <!-- ============================================================== -->
-              <div class="rounded-xl border border-slate-200/80 bg-slate-50/70 p-3.5 shadow-sm flex flex-col space-y-3">
-                <div class="flex items-center justify-between">
-                  <!-- You can edit the Video Title below -->
-                  <span class="text-xs font-bold text-[#b85d42]">Video 2: TOEIC Listening &amp; Pacing Strategies</span>
-                  <span class="text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Exam Technique</span>
+              <div class="compact-video-card space-y-3">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-bold text-slate-800 line-clamp-1">Video 2: TOEIC Listening</span>
+                  <span class="text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full shrink-0">Strategy</span>
                 </div>
-                <!-- 16:9 Responsive Video Embed Container -->
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem;" class="shadow-inner bg-black">
+
+                <!-- 16:9 Responsive Compact Video Player -->
+                <div class="video-frame-container shadow-inner">
                   <iframe 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
                     src="https://www.youtube.com/embed/ScMzIvxBSi4" 
                     title="YouTube video player 2" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                   </iframe>
                 </div>
-                <!-- You can edit the Focus / Note below -->
-                <div class="text-[11px] text-slate-600 leading-normal">
-                  <strong>Key Focus:</strong> Analyze conversational tone in airport announcements and multi-speaker dialogues (TOEIC Parts 3 and 4).
-                </div>
+
+                <p class="text-[11px] text-slate-500 leading-normal pt-1">
+                  <strong>Focus:</strong> Analyze conversational tone in airport announcements and multi-speaker dialogues (TOEIC Parts 3 &amp; 4).
+                </p>
               </div>
 
             </div>
           </section>
 
           <!-- ================= SECTION 2: NEWS ARTICLES (2 ARTICLES) ================= -->
-          <section class="space-y-3 pt-2">
+          <section class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
               <span class="bg-[#b85d42] text-white text-xs font-black px-2.5 py-0.5 rounded-md">02</span>
               <h3 class="text-sm sm:text-base font-bold text-[#b85d42] tracking-tight uppercase">
@@ -147,7 +211,7 @@
               Read these two industry reports examining ecological responsibility and evolving travel patterns.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
               
               <!-- ============================================================== -->
               <!-- 🔗 [LINK 3/9]: INSERT NEWS ARTICLE 1 LINK & CONTENT HERE       -->
@@ -155,11 +219,11 @@
               <!-- Replace href="INSERT_ARTICLE_1_LINK_HERE" with your link       -->
               <!-- You can also edit the Headline and Summary text below          -->
               <!-- ============================================================== -->
-              <article class="p-4 sm:p-5 rounded-xl border border-slate-200/80 bg-slate-50/70 shadow-sm flex flex-col justify-between space-y-3 hover:border-[#b85d42]/40 transition-colors">
-                <div class="space-y-2">
+              <article class="card-subtle-slate flex flex-col justify-between space-y-4">
+                <div class="space-y-2.5">
                   <div class="flex items-center justify-between text-[11px] text-slate-500">
                     <span class="font-bold text-[#b85d42] uppercase tracking-wider">Aviation &amp; Climate</span>
-                    <span class="font-medium">Industry Press</span>
+                    <span class="font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">Industry Press</span>
                   </div>
                   <h4 class="text-sm sm:text-base font-bold text-slate-800 leading-snug">
                     Decarbonizing Regional Transport: The Race Toward Sustainable Aviation Fuels (SAF)
@@ -168,11 +232,11 @@
                     European air corridors and major aerospace hubs are accelerating mandates for SAF adoption. Explore how airlines are restructuring their supply chains, addressing cost premiums, and measuring real-world emissions reductions.
                   </p>
                 </div>
-                <div class="pt-2 flex items-center justify-between">
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
                   <span class="text-[11px] text-slate-400 font-medium">Estimated read: 4 mins</span>
                   <!-- ▼▼▼ PASTE ARTICLE 1 URL IN THE href="..." BELOW ▼▼▼ -->
                   <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer"
-                     class="inline-flex items-center space-x-1.5 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-sm">
+                     class="inline-flex items-center space-x-1.5 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3.5 py-1.5 rounded-lg font-bold text-xs transition-all shadow-sm">
                     <span>Read Article</span>
                     <span aria-hidden="true">→</span>
                   </a>
@@ -185,11 +249,11 @@
               <!-- Replace href="INSERT_ARTICLE_2_LINK_HERE" with your link       -->
               <!-- You can also edit the Headline and Summary text below          -->
               <!-- ============================================================== -->
-              <article class="p-4 sm:p-5 rounded-xl border border-slate-200/80 bg-slate-50/70 shadow-sm flex flex-col justify-between space-y-3 hover:border-[#b85d42]/40 transition-colors">
-                <div class="space-y-2">
+              <article class="card-subtle-slate flex flex-col justify-between space-y-4">
+                <div class="space-y-2.5">
                   <div class="flex items-center justify-between text-[11px] text-slate-500">
                     <span class="font-bold text-[#b85d42] uppercase tracking-wider">DD&amp;RS &amp; Overtourism</span>
-                    <span class="font-medium">Global Mobility</span>
+                    <span class="font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">Global Mobility</span>
                   </div>
                   <h4 class="text-sm sm:text-base font-bold text-slate-800 leading-snug">
                     Balancing Resident Well-Being &amp; Tourism Influx: New Regulatory Trends
@@ -198,11 +262,11 @@
                     Historic capitals and coastal regions are introducing dynamic access fees and high-speed rail incentives to disperse visitor numbers. Discover how city planners evaluate community impact and infrastructure longevity.
                   </p>
                 </div>
-                <div class="pt-2 flex items-center justify-between">
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
                   <span class="text-[11px] text-slate-400 font-medium">Estimated read: 5 mins</span>
                   <!-- ▼▼▼ PASTE ARTICLE 2 URL IN THE href="..." BELOW ▼▼▼ -->
                   <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer"
-                     class="inline-flex items-center space-x-1.5 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-sm">
+                     class="inline-flex items-center space-x-1.5 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3.5 py-1.5 rounded-lg font-bold text-xs transition-all shadow-sm">
                     <span>Read Article</span>
                     <span aria-hidden="true">→</span>
                   </a>
@@ -213,7 +277,7 @@
           </section>
 
           <!-- ================= SECTION 3: 5 USEFUL WEB PAGES ================= -->
-          <section class="space-y-3 pt-2">
+          <section class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
               <span class="bg-[#b85d42] text-white text-xs font-black px-2.5 py-0.5 rounded-md">03</span>
               <h3 class="text-sm sm:text-base font-bold text-[#b85d42] tracking-tight uppercase">
@@ -224,7 +288,7 @@
               Access these 5 authoritative portals for grammar reference, vocabulary enrichment, and DD&amp;RS research.
             </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-1">
               
               <!-- ============================================================== -->
               <!-- 🔗 [LINK 5/9]: INSERT USEFUL WEB PAGE 1 URL HERE               -->
@@ -232,20 +296,20 @@
               <!-- Edit Title and Description directly below                      -->
               <!-- ============================================================== -->
               <a href="https://www.ets.org/toeic.html" target="_blank" rel="noopener noreferrer"
-                 class="group p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-[#c29b38] hover:shadow-md transition-all flex flex-col justify-between">
-                <div class="space-y-1.5">
+                 class="resource-link-card group space-y-3">
+                <div class="space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-[10px] font-black tracking-wider text-[#c29b38] uppercase">01 • Exam Prep</span>
                     <span class="text-slate-400 group-hover:text-[#c29b38] transition-colors text-xs font-bold">↗</span>
                   </div>
-                  <h4 class="text-xs font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
                     Official ETS TOEIC Hub
                   </h4>
-                  <p class="text-[11px] text-slate-500 leading-normal">
+                  <p class="text-xs text-slate-500 leading-relaxed">
                     Review sample test questions, test timing rubrics, and the official score mapping guide for B2/C1 levels.
                   </p>
                 </div>
-                <div class="mt-3 text-[10px] font-bold text-[#b85d42] flex items-center space-x-1">
+                <div class="pt-2 text-[11px] font-bold text-[#b85d42] flex items-center space-x-1">
                   <span>Visit Resource</span>
                   <span>→</span>
                 </div>
@@ -257,20 +321,20 @@
               <!-- Edit Title and Description directly below                      -->
               <!-- ============================================================== -->
               <a href="https://www.iata.org/en/programs/sustainability/" target="_blank" rel="noopener noreferrer"
-                 class="group p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-[#c29b38] hover:shadow-md transition-all flex flex-col justify-between">
-                <div class="space-y-1.5">
+                 class="resource-link-card group space-y-3">
+                <div class="space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-[10px] font-black tracking-wider text-[#c29b38] uppercase">02 • Sustainability</span>
                     <span class="text-slate-400 group-hover:text-[#c29b38] transition-colors text-xs font-bold">↗</span>
                   </div>
-                  <h4 class="text-xs font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
                     IATA NetZero &amp; Aviation Sustainability
                   </h4>
-                  <p class="text-[11px] text-slate-500 leading-normal">
+                  <p class="text-xs text-slate-500 leading-relaxed">
                     Authoritative data on the international airline industry's roadmap to net-zero carbon emissions by 2050.
                   </p>
                 </div>
-                <div class="mt-3 text-[10px] font-bold text-[#b85d42] flex items-center space-x-1">
+                <div class="pt-2 text-[11px] font-bold text-[#b85d42] flex items-center space-x-1">
                   <span>Visit Resource</span>
                   <span>→</span>
                 </div>
@@ -282,20 +346,20 @@
               <!-- Edit Title and Description directly below                      -->
               <!-- ============================================================== -->
               <a href="https://www.unwto.org/sustainable-development" target="_blank" rel="noopener noreferrer"
-                 class="group p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-[#c29b38] hover:shadow-md transition-all flex flex-col justify-between">
-                <div class="space-y-1.5">
+                 class="resource-link-card group space-y-3">
+                <div class="space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-[10px] font-black tracking-wider text-[#c29b38] uppercase">03 • DD&amp;RS Guidelines</span>
                     <span class="text-slate-400 group-hover:text-[#c29b38] transition-colors text-xs font-bold">↗</span>
                   </div>
-                  <h4 class="text-xs font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
                     UN Tourism Sustainable Development
                   </h4>
-                  <p class="text-[11px] text-slate-500 leading-normal">
+                  <p class="text-xs text-slate-500 leading-relaxed">
                     Global framework policies outlining sustainable destination management and community-based tourism (CBT).
                   </p>
                 </div>
-                <div class="mt-3 text-[10px] font-bold text-[#b85d42] flex items-center space-x-1">
+                <div class="pt-2 text-[11px] font-bold text-[#b85d42] flex items-center space-x-1">
                   <span>Visit Resource</span>
                   <span>→</span>
                 </div>
@@ -307,20 +371,20 @@
               <!-- Edit Title and Description directly below                      -->
               <!-- ============================================================== -->
               <a href="https://dictionary.cambridge.org" target="_blank" rel="noopener noreferrer"
-                 class="group p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-[#c29b38] hover:shadow-md transition-all flex flex-col justify-between">
-                <div class="space-y-1.5">
+                 class="resource-link-card group space-y-3">
+                <div class="space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-[10px] font-black tracking-wider text-[#c29b38] uppercase">04 • Collocations</span>
                     <span class="text-slate-400 group-hover:text-[#c29b38] transition-colors text-xs font-bold">↗</span>
                   </div>
-                  <h4 class="text-xs font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
                     Cambridge English Collocations &amp; Idioms
                   </h4>
-                  <p class="text-[11px] text-slate-500 leading-normal">
+                  <p class="text-xs text-slate-500 leading-relaxed">
                     Check high-frequency B2/C1 travel combinations, prepositions with transit verbs, and formal business phrases.
                   </p>
                 </div>
-                <div class="mt-3 text-[10px] font-bold text-[#b85d42] flex items-center space-x-1">
+                <div class="pt-2 text-[11px] font-bold text-[#b85d42] flex items-center space-x-1">
                   <span>Visit Resource</span>
                   <span>→</span>
                 </div>
@@ -332,20 +396,20 @@
               <!-- Edit Title and Description directly below                      -->
               <!-- ============================================================== -->
               <a href="https://www.bbc.com/travel" target="_blank" rel="noopener noreferrer"
-                 class="group p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-[#c29b38] hover:shadow-md transition-all flex flex-col justify-between sm:col-span-2 lg:col-span-1">
-                <div class="space-y-1.5">
+                 class="resource-link-card group space-y-3 sm:col-span-2 lg:col-span-1">
+                <div class="space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-[10px] font-black tracking-wider text-[#c29b38] uppercase">05 • Travel Anecdotes</span>
                     <span class="text-slate-400 group-hover:text-[#c29b38] transition-colors text-xs font-bold">↗</span>
                   </div>
-                  <h4 class="text-xs font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-[#b85d42] transition-colors">
                     BBC Travel Features &amp; Culture
                   </h4>
-                  <p class="text-[11px] text-slate-500 leading-normal">
+                  <p class="text-xs text-slate-500 leading-relaxed">
                     Engaging journalistic articles and personal narrative essays to inspire your Session 1 travel anecdotes.
                   </p>
                 </div>
-                <div class="mt-3 text-[10px] font-bold text-[#b85d42] flex items-center space-x-1">
+                <div class="pt-2 text-[11px] font-bold text-[#b85d42] flex items-center space-x-1">
                   <span>Visit Resource</span>
                   <span>→</span>
                 </div>
@@ -355,7 +419,7 @@
           </section>
 
           <!-- Stylized Skills Footer Area (matches plan1.html) -->
-          <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200/60 bg-slate-50/50 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
+          <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200 bg-slate-50/70 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
             <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#b85d42]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
             <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c29b38]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
             <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">Aeronautical Vocabulary</span><span class="text-[8px] text-slate-400 font-mono">/ˌer.əˈnɔː.tɪ.kəl vəˈkæb.jə.lə.ri/</span></div>
