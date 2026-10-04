@@ -8,14 +8,14 @@
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
     
     <!-- Header bar -->
-    <header class="bg-[#b85d42] text-white px-4 py-3 sm:px-6 sm:py-4 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden"
+    <header class="bg-[#b85d42] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden"
       style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
       
       <!-- Left: Title Group -->
-      <div class="flex items-center space-x-2.5 sm:space-x-3">
-        <div class="bg-[#c29b38] p-1.5 rounded text-white shadow-sm flex items-center justify-center">
-          <!-- Left Arrow SVG Icon (Reduced size) -->
-          <svg class="w-3.5 h-3.5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        <div class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
+          <!-- Left Arrow SVG Icon -->
+          <svg class="w-4 h-4 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
           </svg>
         </div>
@@ -27,13 +27,11 @@
         </div>
       </div>
 
-      <!-- Back to Module / Session Link (Icon Only, Reduced Size) -->
-      <div class="flex items-center">
-        <a class="flex items-center justify-center bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white p-1.5 rounded-md transition-all shadow-sm cursor-pointer"
-           href="../index.html" title="Back to Module 1">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
-            </svg>
+      <!-- Back to Module / Session Link (Text Only, Original Button Style) -->
+      <div class="flex items-center space-x-2">
+        <a class="flex items-center bg-[#c29b38] hover:bg-[#a8842c] active:bg-[#8f6e21] text-white px-3.5 py-1.5 rounded-lg font-semibold text-xs transition-all shadow-md cursor-pointer"
+           href="../index.html">
+            <span>Back to Module 1</span>
         </a>
       </div>
 
