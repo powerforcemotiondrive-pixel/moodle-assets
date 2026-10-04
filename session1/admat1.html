@@ -10,7 +10,6 @@
 
     <!-- Subtle Slate & Generous Padding Style Layer -->
     <style>
-      /* Guaranteed internal breathing room & subtle slate styling */
       .card-subtle-slate {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
@@ -24,7 +23,6 @@
         box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
       }
 
-      /* Compact video cards: reduced footprint by >70% */
       .compact-video-card {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
@@ -53,7 +51,6 @@
         border: 0;
       }
 
-      /* Web link cards */
       .resource-link-card {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
@@ -74,7 +71,6 @@
 </head>
 <body class="bg-slate-100 min-h-screen">
 
-<!-- Custom Tailwind adjustments for Warm Editorial / Terracotta & Oat theme -->
 <div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans">
   <div class="moodle-deck-canvas bg-white rounded-2xl shadow-xl border border-slate-300 flex flex-col overflow-hidden">
     
@@ -83,8 +79,7 @@
       style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
       <div class="flex items-center space-x-3 sm:space-x-4">
         <div class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
-          <!-- Multimedia / Collection Icon -->
-          <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="20" height="20" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
         </div>
@@ -125,7 +120,7 @@
             </p>
           </div>
 
-          <!-- ================= SECTION 1: TWO COMPACT YOUTUBE VIDEO VIEWERS ================= -->
+          <!-- SECTION 1: YOUTUBE VIDEO VIEWERS -->
           <section class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
               <span class="bg-[#b85d42] text-white text-xs font-black px-2.5 py-0.5 rounded-md">01</span>
@@ -137,23 +132,13 @@
               Watch the accompanying video clips below and take notes on relevant travel collocations, tone, and arguments.
             </p>
 
-            <!-- Compact, Side-by-Side Video Showcase (Constrained width prevents monster-sized screens) -->
             <div class="max-w-[760px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 pt-1">
-              
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 1/9]: INSERT YOUTUBE VIDEO 1 EMBED URL OR ID HERE     -->
-              <!-- Instructions:                                                  -->
-              <!-- 1. Copy your YouTube video ID (e.g., from watch?v=ScMzIvxBSi4) -->
-              <!-- 2. Replace the ID in the src="..." attribute below             -->
-              <!-- Example: src="https://www.youtube.com/embed/YOUR_VIDEO_ID"     -->
-              <!-- ============================================================== -->
+              <!-- Video 1 -->
               <div class="compact-video-card space-y-3">
                 <div class="flex items-center justify-between gap-2">
                   <span class="text-xs font-bold text-slate-800 line-clamp-1">Video 1: Sustainable Aviation</span>
                   <span class="text-[10px] font-semibold bg-amber-100 text-[#a8842c] px-2 py-0.5 rounded-full shrink-0">Discussion</span>
                 </div>
-
-                <!-- 16:9 Responsive Compact Video Player -->
                 <div class="video-frame-container shadow-inner">
                   <iframe 
                     src="https://www.youtube.com/embed/ScMzIvxBSi4" 
@@ -162,26 +147,17 @@
                     allowfullscreen>
                   </iframe>
                 </div>
-
                 <p class="text-[11px] text-slate-500 leading-normal pt-1">
                   <strong>Focus:</strong> Industry terminology regarding carbon offsetting, sustainable fleet modernization, and passenger choices.
                 </p>
               </div>
 
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 2/9]: INSERT YOUTUBE VIDEO 2 EMBED URL OR ID HERE     -->
-              <!-- Instructions:                                                  -->
-              <!-- 1. Copy your YouTube video ID (e.g., from watch?v=ScMzIvxBSi4) -->
-              <!-- 2. Replace the ID in the src="..." attribute below             -->
-              <!-- Example: src="https://www.youtube.com/embed/YOUR_VIDEO_ID"     -->
-              <!-- ============================================================== -->
+              <!-- Video 2 -->
               <div class="compact-video-card space-y-3">
                 <div class="flex items-center justify-between gap-2">
                   <span class="text-xs font-bold text-slate-800 line-clamp-1">Video 2: TOEIC Listening</span>
                   <span class="text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full shrink-0">Strategy</span>
                 </div>
-
-                <!-- 16:9 Responsive Compact Video Player -->
                 <div class="video-frame-container shadow-inner">
                   <iframe 
                     src="https://www.youtube.com/embed/ScMzIvxBSi4" 
@@ -190,16 +166,14 @@
                     allowfullscreen>
                   </iframe>
                 </div>
-
                 <p class="text-[11px] text-slate-500 leading-normal pt-1">
                   <strong>Focus:</strong> Analyze conversational tone in airport announcements and multi-speaker dialogues (TOEIC Parts 3 &amp; 4).
                 </p>
               </div>
-
             </div>
           </section>
 
-          <!-- ================= SECTION 2: NEWS ARTICLES (2 ARTICLES) ================= -->
+          <!-- SECTION 2: NEWS ARTICLES -->
           <section class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
               <span class="bg-[#b85d42] text-white text-xs font-black px-2.5 py-0.5 rounded-md">02</span>
@@ -212,13 +186,7 @@
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
-              
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 3/9]: INSERT NEWS ARTICLE 1 LINK & CONTENT HERE       -->
-              <!-- Instructions:                                                  -->
-              <!-- Replace href="INSERT_ARTICLE_1_LINK_HERE" with your link       -->
-              <!-- You can also edit the Headline and Summary text below          -->
-              <!-- ============================================================== -->
+              <!-- Article 1 -->
               <article class="card-subtle-slate flex flex-col justify-between space-y-4">
                 <div class="space-y-2.5">
                   <div class="flex items-center justify-between text-[11px] text-slate-500">
@@ -234,7 +202,6 @@
                 </div>
                 <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
                   <span class="text-[11px] text-slate-400 font-medium">Estimated read: 4 mins</span>
-                  <!-- ▼▼▼ PASTE ARTICLE 1 URL IN THE href="..." BELOW ▼▼▼ -->
                   <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer"
                      class="inline-flex items-center space-x-1.5 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3.5 py-1.5 rounded-lg font-bold text-xs transition-all shadow-sm">
                     <span>Read Article</span>
@@ -243,12 +210,7 @@
                 </div>
               </article>
 
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 4/9]: INSERT NEWS ARTICLE 2 LINK & CONTENT HERE       -->
-              <!-- Instructions:                                                  -->
-              <!-- Replace href="INSERT_ARTICLE_2_LINK_HERE" with your link       -->
-              <!-- You can also edit the Headline and Summary text below          -->
-              <!-- ============================================================== -->
+              <!-- Article 2 -->
               <article class="card-subtle-slate flex flex-col justify-between space-y-4">
                 <div class="space-y-2.5">
                   <div class="flex items-center justify-between text-[11px] text-slate-500">
@@ -264,7 +226,6 @@
                 </div>
                 <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
                   <span class="text-[11px] text-slate-400 font-medium">Estimated read: 5 mins</span>
-                  <!-- ▼▼▼ PASTE ARTICLE 2 URL IN THE href="..." BELOW ▼▼▼ -->
                   <a href="https://e-campus.enac.fr/moodle" target="_blank" rel="noopener noreferrer"
                      class="inline-flex items-center space-x-1.5 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3.5 py-1.5 rounded-lg font-bold text-xs transition-all shadow-sm">
                     <span>Read Article</span>
@@ -272,11 +233,10 @@
                   </a>
                 </div>
               </article>
-
             </div>
           </section>
 
-          <!-- ================= SECTION 3: 5 USEFUL WEB PAGES ================= -->
+          <!-- SECTION 3: USEFUL WEB PAGES -->
           <section class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-200 pb-2">
               <span class="bg-[#b85d42] text-white text-xs font-black px-2.5 py-0.5 rounded-md">03</span>
@@ -289,12 +249,7 @@
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-1">
-              
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 5/9]: INSERT USEFUL WEB PAGE 1 URL HERE               -->
-              <!-- Replace href="..." with your web page link                     -->
-              <!-- Edit Title and Description directly below                      -->
-              <!-- ============================================================== -->
+              <!-- Resource 1 -->
               <a href="https://www.ets.org/toeic.html" target="_blank" rel="noopener noreferrer"
                  class="resource-link-card group space-y-3">
                 <div class="space-y-2">
@@ -315,11 +270,7 @@
                 </div>
               </a>
 
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 6/9]: INSERT USEFUL WEB PAGE 2 URL HERE               -->
-              <!-- Replace href="..." with your web page link                     -->
-              <!-- Edit Title and Description directly below                      -->
-              <!-- ============================================================== -->
+              <!-- Resource 2 -->
               <a href="https://www.iata.org/en/programs/sustainability/" target="_blank" rel="noopener noreferrer"
                  class="resource-link-card group space-y-3">
                 <div class="space-y-2">
@@ -340,11 +291,7 @@
                 </div>
               </a>
 
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 7/9]: INSERT USEFUL WEB PAGE 3 URL HERE               -->
-              <!-- Replace href="..." with your web page link                     -->
-              <!-- Edit Title and Description directly below                      -->
-              <!-- ============================================================== -->
+              <!-- Resource 3 -->
               <a href="https://www.unwto.org/sustainable-development" target="_blank" rel="noopener noreferrer"
                  class="resource-link-card group space-y-3">
                 <div class="space-y-2">
@@ -365,11 +312,7 @@
                 </div>
               </a>
 
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 8/9]: INSERT USEFUL WEB PAGE 4 URL HERE               -->
-              <!-- Replace href="..." with your web page link                     -->
-              <!-- Edit Title and Description directly below                      -->
-              <!-- ============================================================== -->
+              <!-- Resource 4 -->
               <a href="https://dictionary.cambridge.org" target="_blank" rel="noopener noreferrer"
                  class="resource-link-card group space-y-3">
                 <div class="space-y-2">
@@ -390,11 +333,7 @@
                 </div>
               </a>
 
-              <!-- ============================================================== -->
-              <!-- 🔗 [LINK 9/9]: INSERT USEFUL WEB PAGE 5 URL HERE               -->
-              <!-- Replace href="..." with your web page link                     -->
-              <!-- Edit Title and Description directly below                      -->
-              <!-- ============================================================== -->
+              <!-- Resource 5 -->
               <a href="https://www.bbc.com/travel" target="_blank" rel="noopener noreferrer"
                  class="resource-link-card group space-y-3 sm:col-span-2 lg:col-span-1">
                 <div class="space-y-2">
@@ -414,11 +353,10 @@
                   <span>→</span>
                 </div>
               </a>
-
             </div>
           </section>
 
-          <!-- Stylized Skills Footer Area (matches plan1.html) -->
+          <!-- Skills Footer Area -->
           <div class="w-full pt-3 pb-3 px-4 rounded-xl border border-slate-200 bg-slate-50/70 grid grid-cols-2 sm:grid-cols-4 gap-y-2.5 gap-x-4 shadow-sm">
             <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#b85d42]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
             <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c29b38]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
@@ -442,6 +380,9 @@
 
   </div>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
