@@ -19,6 +19,9 @@
         <div class="flex items-center space-x-3 sm:space-x-4">
           <div class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
             <!-- Terracotta Theme Icon -->
+            <svg class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
           </div>
           <div>
             <span class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fde047] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL &amp; TRANSPORT (2)</span>
@@ -102,7 +105,7 @@
         lessonPlanUrl: "session1/plan1.html",
         objectivesUrl: "session1/obj1.html",
         classReviewUrl: "session1/rev1.html",
-        imageUrl: "https://imgur.com/AzH2ypU.png"
+        imageUrl: "https://i.imgur.com/AzH2ypU.png"
       },
       {
         tag: "Module 1 - Session 2",
@@ -113,7 +116,7 @@
         lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267457",
         objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266886",
         classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267459",
-        imageUrl: "https://imgur.com/Mi4BvSS.png"
+        imageUrl: "https://i.imgur.com/Mi4BvSS.png"
       },
       {
         tag: "Module 1 - Session 3",
@@ -124,7 +127,7 @@
         lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266897",
         objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266889",
         classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267460",
-        imageUrl: "https://imgur.com/q9ZkL5w.png"
+        imageUrl: "https://i.imgur.com/q9ZkL5w.png"
       },
       {
         tag: "Module 1 - Session 4",
@@ -135,7 +138,7 @@
         lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267455",
         objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266891",
         classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267462",
-        imageUrl: "https://imgur.com/y2TlDCO.png"
+        imageUrl: "https://i.imgur.com/y2TlDCO.png"
       },
       {
         tag: "Module 1 - Session 5",
@@ -145,7 +148,7 @@
         pdfUrl: "https://e-campus.enac.fr/moodle/mod/resource/view.php?id=266672",
         lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267409",
         objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266887",
-        imageUrl: "https://imgur.com/9h4JS6u.png"
+        imageUrl: "https://i.imgur.com/9h4JS6u.png"
       },
       {
         tag: "Module 1 - Focus",
@@ -156,7 +159,7 @@
         lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266892",
         objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266887",
         classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267456",
-        imageUrl: "https://imgur.com/AzH2ypU.png"
+        imageUrl: "https://i.imgur.com/AzH2ypU.png"
       },
       {
         tag: "Module 1 - Revision",
@@ -164,7 +167,7 @@
         description: "Consolidate your learning with our review hubs. Continuous practice of our discussion strategies, grammar rules, DDRS, and TOEIC exercises ensures lasting professional fluency.<br><br><em>Subject overview:</em> Access your glossaries, grammar files, and reference materials below to support your studies for Module 1.",
         glossaryUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266680",
         grammarUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266693",
-        imageUrl: "https://imgur.com/kTgThCZ.png"
+        imageUrl: "https://i.imgur.com/kTgThCZ.png"
       }
     ];
 
@@ -176,6 +179,37 @@
       document.getElementById('prev-btn').addEventListener('click', () => stepDeck(-1));
       document.getElementById('next-btn').addEventListener('click', () => stepDeck(1));
 
+      // Enable keyboard navigation with left/right arrow keys
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') stepDeck(-1);
+        if (e.key === 'ArrowRight') stepDeck(1);
+      });
+
+      // Hide image container on error to prevent broken image icons
+      const imgEl = document.getElementById('card-image');
+      const imageContainer = document.getElementById('image-container');
+      if (imgEl && imageContainer) {
+        imgEl.addEventListener('error', () => {
+          imageContainer.classList.add('hidden');
+        });
+      }
+
+      // Populate static skills badge container once
+      const skillsEl = document.getElementById('card-skills');
+      if (skillsEl) {
+        skillsEl.innerHTML = `
+          <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#b85d42]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c29b38]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#9e4e37]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#c29b38]">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
+        `;
+      }
+
+      buildMenu();
       renderCard(0);
     }
 
@@ -186,26 +220,26 @@
       deckPages.forEach((page, idx) => {
         const item = document.createElement('button');
         item.type = 'button';
-        const isActive = idx === currentIndex;
-
-        item.className = `w-full text-left px-3 py-2 text-xs font-medium transition-all flex items-center justify-between border-b border-slate-100 cursor-pointer ${
-          isActive 
-            ? 'bg-amber-50/80 text-[#b85d42] font-bold shadow-md shadow-slate-400/40' 
-            : 'text-slate-700 hover:bg-slate-100'
-        }`;
-
-        if (isActive) {
-          item.style.borderLeft = '4px solid #c29b38';
-        } else {
-          item.style.borderLeft = '4px solid transparent';
-        }
-
         item.innerHTML = `
           <span class="truncate pr-2 pointer-events-none">${page.title}</span>
           <span class="text-[10px] text-slate-400 font-mono pointer-events-none">0${idx + 1}</span>
         `;
         item.addEventListener('click', () => renderCard(idx));
         menuEl.appendChild(item);
+      });
+    }
+
+    function updateMenu(activeIdx) {
+      const menuEl = document.getElementById('deck-menu');
+      const items = menuEl.querySelectorAll('button');
+      items.forEach((item, idx) => {
+        const isActive = idx === activeIdx;
+        item.className = `w-full text-left px-3 py-2 text-xs font-medium transition-all flex items-center justify-between border-b border-slate-100 cursor-pointer ${
+          isActive 
+            ? 'bg-amber-50/80 text-[#b85d42] font-bold shadow-md shadow-slate-400/40' 
+            : 'text-slate-700 hover:bg-slate-100'
+        }`;
+        item.style.borderLeft = isActive ? '4px solid #c29b38' : '4px solid transparent';
       });
     }
 
@@ -219,18 +253,6 @@
       document.getElementById('card-heading').textContent = page.title;
       document.getElementById('card-desc').innerHTML = page.description;
 
-      const skillsEl = document.getElementById('card-skills');
-      skillsEl.innerHTML = `
-        <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#b85d42]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
-        <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c29b38]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
-        <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
-        <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#9e4e37]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
-        <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
-        <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
-        <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
-        <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#c29b38]">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
-      `;
-
       const actionContainer = document.getElementById('action-links-container');
       const footerInstruction = document.getElementById('footer-instruction');
       actionContainer.innerHTML = '';
@@ -243,7 +265,7 @@
         btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
         btn.href = page.lessonPlanUrl;
         btn.target = "_blank";
-        btn.rel = "noopener";
+        btn.rel = "noopener noreferrer";
         btn.innerHTML = "<span>Lesson Plan</span>";
         leftButtonsGroup.appendChild(btn);
       }
@@ -253,22 +275,24 @@
         btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
         btn.href = page.objectivesUrl;
         btn.target = "_blank";
-        btn.rel = "noopener";
+        btn.rel = "noopener noreferrer";
         btn.innerHTML = "<span>Objectives</span>";
         leftButtonsGroup.appendChild(btn);
       }
 
-      if (currentIndex !== 6 && page.url) {
+      const isRevisionPage = Boolean(page.glossaryUrl || page.grammarUrl);
+
+      if (!isRevisionPage && page.url) {
         const btn = document.createElement('a');
         btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
         btn.href = page.url;
         btn.target = "_blank";
-        btn.rel = "noopener";
-        btn.innerHTML = "<span>Additional Resources</span>"; // Updated text here
+        btn.rel = "noopener noreferrer";
+        btn.innerHTML = "<span>Additional Resources</span>";
         leftButtonsGroup.appendChild(btn);
       }
 
-      if (currentIndex === 6) {
+      if (isRevisionPage) {
         footerInstruction.textContent = "Click below to open your revision resources:";
         const revisionLinks = [
           { label: "Revision (Glossary)", href: page.glossaryUrl },
@@ -280,8 +304,8 @@
             btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
             btn.href = linkObj.href;
             btn.target = "_blank";
-            btn.rel = "noopener";
-            btn.innerHTML = `<span>Revision</span>`;
+            btn.rel = "noopener noreferrer";
+            btn.innerHTML = `<span>${linkObj.label}</span>`;
             leftButtonsGroup.appendChild(btn);
           }
         });
@@ -292,7 +316,7 @@
           reviewBtn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
           reviewBtn.href = page.classReviewUrl;
           reviewBtn.target = "_blank";
-          reviewBtn.rel = "noopener";
+          reviewBtn.rel = "noopener noreferrer";
           reviewBtn.innerHTML = "<span>Revision</span>";
           leftButtonsGroup.appendChild(reviewBtn);
         }
@@ -305,7 +329,7 @@
         pdfBtn.className = "inline-flex items-center space-x-2 bg-[#c29b38] hover:bg-[#a8842c] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto";
         pdfBtn.href = page.pdfUrl;
         pdfBtn.target = "_blank";
-        pdfBtn.rel = "noopener";
+        pdfBtn.rel = "noopener noreferrer";
         pdfBtn.innerHTML = "<span>Worksheet</span>";
         actionContainer.appendChild(pdfBtn);
       }
@@ -328,7 +352,7 @@
       document.getElementById('prev-btn').disabled = (currentIndex === 0);
       document.getElementById('next-btn').disabled = (currentIndex === deckPages.length - 1);
 
-      buildMenu();
+      updateMenu(currentIndex);
     }
 
     function stepDeck(direction) {
