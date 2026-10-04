@@ -264,7 +264,7 @@
         btn.href = page.url;
         btn.target = "_blank";
         btn.rel = "noopener";
-        btn.innerHTML = "<span>Class Material</span>";
+        btn.innerHTML = "<span>Additional Resources</span>"; // Updated text here
         leftButtonsGroup.appendChild(btn);
       }
 
@@ -338,8 +338,10 @@
       }
     }
 
-    // Standard DOMContentLoaded listener works properly for static hosting like GitHub Pages
-    document.addEventListener('DOMContentLoaded', initDeck);
+    // Standard DOMContentLoaded listener properly calling initDeck()
+    document.addEventListener('DOMContentLoaded', () => {
+      initDeck();
+    });
   </script>
 </body>
 </html>
