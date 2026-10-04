@@ -10,30 +10,41 @@
   </metadata>
   <organizations default="GSEA_ORG">
     <organization identifier="GSEA_ORG">
-      <title>GSEA Technical English Module 1</title>
+      <title>GSEA Semester 1 - Module 1: Travel, Transport &amp; Leisure</title>
       <item identifier="ITEM_1" identifierref="RESOURCE_1">
-        <title>Interactive Session Deck</title>
+        <title>Module 1 Interactive Session Deck</title>
       </item>
     </organization>
   </organizations>
   <resources>
-  <resource identifier="RESOURCE_1" type="webcontent" adlcp:scormtype="sco" href="index.html">
-    <!-- Main entry file -->
-    <file href="index.html"/>
-    
-    <!-- Compiled Tailwind CSS -->
-    <file href="src/output.css"/>
-    
-    <!-- Add every HTML lesson plan / page here -->
-    <file href="session1/plan"/>
-    <!-- (Add any other M1S2Plan.html, etc., here) -->
-    
-    <!-- Add your images -->
-    <file href="images/session1.png"/>
-    <file href="images/session2.png"/>
-    
-    <!-- Add your PDFs/Worksheets -->
-    <file href="pdfs/session1-worksheet.pdf"/>
-  </resource>
-</resources>
+    <resource identifier="RESOURCE_1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <!-- Main course entry file -->
+      <file href="index.html"/>
+      
+      <!-- Compiled Tailwind CSS stylesheets -->
+      <file href="dist/output.css"/>
+      <file href="output.css"/>
+      
+      <!-- Session 1 Course Pages -->
+      <file href="session1/plan1.html"/>
+      <file href="session1/obj1.html"/>
+      <file href="session1/rev1.html"/>
+      <file href="session1/admat1.html"/>
+      
+      <!-- Module Deck Card Images -->
+      <file href="images/card1.png"/>
+      <file href="images/card2.png"/>
+      <file href="images/card3.png"/>
+      <file href="images/card4.png"/>
+      
+      <!-- Session 1 Subdirectory Images -->
+      <file href="session1/images/card1.png"/>
+      <file href="session1/images/card2.png"/>
+      <file href="session1/images/card3.png"/>
+      <file href="session1/images/card4.png"/>
+      
+      <!-- Student Worksheets & PDF Documents -->
+      <file href="ws1.pdf"/>
+    </resource>
+  </resources>
 </manifest>
