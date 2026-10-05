@@ -239,6 +239,9 @@
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * 0.5);
   }
+  .mt-2\.5 {
+    margin-top: calc(var(--spacing) * 2.5);
+  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -323,6 +326,9 @@
   .scale-\[1\.01\] {
     scale: 1.01;
   }
+  .scale-\[1\.02\] {
+    scale: 1.02;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -365,8 +371,14 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-end {
+    justify-content: flex-end;
+  }
   .gap-1 {
     gap: var(--spacing);
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
   }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
@@ -581,6 +593,9 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
@@ -846,6 +861,9 @@
     .hover\:bg-\[\#a8842c\]:hover {
       background-color: #a8842c;
     }
+    .hover\:bg-slate-50:hover {
+      background-color: var(--color-slate-50);
+    }
     .hover\:bg-slate-100:hover {
       background-color: var(--color-slate-100);
     }
@@ -882,6 +900,9 @@
     .sm\:flex-row {
       flex-direction: row;
     }
+    .sm\:gap-2 {
+      gap: calc(var(--spacing) * 2);
+    }
     .sm\:gap-2\.5 {
       gap: calc(var(--spacing) * 2.5);
     }
@@ -892,6 +913,9 @@
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+    }
+    .sm\:p-2\.5 {
+      padding: calc(var(--spacing) * 2.5);
     }
     .sm\:p-4 {
       padding: calc(var(--spacing) * 4);
