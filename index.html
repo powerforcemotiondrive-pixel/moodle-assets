@@ -3,35 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSEA Semester 1 - Module 1: Travel & Transport</title>
+  <title>GSEA Semester 1 - Course Modules</title>
   <!-- Tailwind CSS CLI Output -->
   <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
+  <style>
+    /* Theme transitions */
+    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+  </style>
 </head>
 <body class="bg-slate-100 min-h-screen flex items-center justify-center">
 
-  <!-- Custom Tailwind adjustments for Warm Editorial / Terracotta & Oat theme -->
+  <!-- Custom Tailwind adjustments -->
   <div class="w-[98%] sm:w-[95%] lg:w-[90%] max-w-[1350px] mx-auto px-2 sm:px-4 py-3 font-sans">
     <!-- Main Deck Container -->
     <div class="moodle-deck-canvas bg-white rounded-2xl shadow-2xl border border-slate-300 flex flex-col overflow-hidden">
       
       <!-- Header bar -->
-      <header class="bg-[#b85d42] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
+      <header id="deck-header" class="bg-[#b85d42] text-white px-4 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#9e4e37] shrink-0 relative overflow-hidden" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px);">
         <div class="flex items-center space-x-3 sm:space-x-4">
-          <div class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
-            <!-- Terracotta Theme Icon -->
+          <div id="deck-icon-box" class="bg-[#c29b38] p-2.5 rounded-lg text-white shadow-md flex items-center justify-center">
+            <!-- Theme Icon -->
             <svg width="20" height="20" style="width: 20px; height: 20px;" class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
           <div>
-            <span class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fde047] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL &amp; TRANSPORT (2)</span>
+            <span id="deck-supertitle" class="block text-xs sm:text-sm md:text-base font-black tracking-wider text-[#fde047] uppercase">GSEA SEMESTER 1 - MODULE 1: TRAVEL &amp; TRANSPORT (2)</span>
             <h1 id="deck-title" class="text-sm sm:text-base font-bold text-white mt-0.5">Loading Module...</h1>
           </div>
         </div>
 
         <!-- Navigation Controls -->
         <div class="flex items-center space-x-2">
-          <span id="counter-badge" class="text-xs font-medium text-white bg-[#9e4e37] px-2.5 py-1 rounded-md border border-[#853f2c] mr-1 shadow-md">1 of 7</span>
+          <span id="counter-badge" class="text-xs font-medium text-white bg-[#9e4e37] px-2.5 py-1 rounded-md border border-[#853f2c] mr-1 shadow-md">1 of 6</span>
           <button id="prev-btn" class="flex items-center space-x-1 bg-[#9e4e37] hover:bg-[#853f2c] active:bg-[#6e3222] text-slate-100 px-3 py-1.5 rounded-lg font-semibold text-xs transition-all border border-[#853f2c] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shadow-md" type="button">
             <span class="pointer-events-none">Previous</span>
           </button>
@@ -59,8 +65,8 @@
           <div class="space-y-4">
             <div class="flex flex-col lg:flex-row gap-4 items-start justify-between">
               <div class="space-y-3 flex-1">
-                <!-- Restyled larger terracotta badge -->
-                <div class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
+                <!-- Restyled badge -->
+                <div id="card-tag-wrapper" class="inline-flex items-center space-x-2 bg-[#b85d42] text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide border border-[#9e4e37] shadow-sm">
                   <span id="card-tag">Section 1</span>
                 </div>
                 <h2 id="card-heading" class="text-lg sm:text-xl font-black text-[#b85d42] tracking-tight"></h2>
@@ -85,6 +91,13 @@
         </div>
       </div>
 
+      <!-- Bottom Module Switcher Bar Across the Bottom -->
+      <nav aria-label="Module selection" class="bg-slate-50 border-t border-slate-200 px-3 py-2.5 sm:px-6 shrink-0">
+        <div id="module-selector-container" class="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto">
+          <!-- Populated via script -->
+        </div>
+      </nav>
+
       <!-- Bottom status footer -->
       <footer class="bg-slate-50 border-t border-slate-200 px-3 py-2 text-[11px] text-slate-500 flex justify-between items-center shrink-0 rounded-b-2xl">
         <span id="footer-status" class="font-medium text-slate-700">Ready</span>
@@ -95,9 +108,9 @@
 
   <!-- Script Configuration -->
   <script>
-    const deckPages = [
+    const createModulePages = (modNumber) => [
       {
-        tag: "Module 1 - Session 1",
+        tag: `Module ${modNumber} - Session 1`,
         title: "Session 1 - Introduction & Travel Anecdote",
         description: "Welcome to our new module on Social Policy, Research and Innovation, and Environmental Management! In our interactive sessions, we will be working extensively on discussion, grammar correction, DDRS, and TOEIC-related exercises to build your professional proficiency.<br><br><em>Subject overview:</em> An introduction to travel and transport themes alongside personal travel anecdotes.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
         url: "session1/admat1.html",
@@ -109,7 +122,7 @@
         imageUrl: "images/card1.png"
       },
       {
-        tag: "Module 1 - Session 2",
+        tag: `Module ${modNumber} - Session 2`,
         title: "Session 2 - Evolution of Transport",
         description: "Welcome back! Continuing our focus on Social Policy, Research, Innovation, and Environmental Management, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Exploring how transport systems have evolved over time and their societal impacts.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
         url: "session2/admat1.html",
@@ -121,7 +134,7 @@
         imageUrl: "images/card2.png"
       },
       {
-        tag: "Module 1 - Session 3",
+        tag: `Module ${modNumber} - Session 3`,
         title: "Session 3 - Overtourism",
         description: "Welcome to Session 3! In this class, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises within the framework of Social Policy, Research and Innovation, and Environmental Management.<br><br><em>Subject overview:</em> Analyzing the environmental and social challenges brought by overtourism in popular destinations.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
         url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266758",
@@ -132,7 +145,7 @@
         imageUrl: "images/card3.png"
       },
       {
-        tag: "Module 1 - Session 4",
+        tag: `Module ${modNumber} - Session 4`,
         title: "Session 4 - Sustainable and Eco-tourism",
         description: "Welcome to Session 4! As we examine environmental management and green innovation, we will continue working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Investigating sustainable practices, green innovation, and eco-friendly alternatives in modern tourism.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
         url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266780",
@@ -143,7 +156,7 @@
         imageUrl: "images/card4.png"
       },
       {
-        tag: "Module 1 - Session 5",
+        tag: `Module ${modNumber} - Session 5`,
         title: "Session 5 - Formative Evaluation",
         description: "Welcome to Session 5! Throughout this module, we have worked on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Formative Evaluation — Design an eco-friendly holiday itinerary or compare two cities with different tourism policies + Targets.<br><br>For this session's evaluation, you will receive a GO / NO GO based on your performance.",
         url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266604",
@@ -153,7 +166,7 @@
         imageUrl: "https://i.imgur.com/9h4JS6u.png"
       },
       {
-        tag: "Module 1 - Focus",
+        tag: `Module ${modNumber} - Focus`,
         title: "DDRS - Framework & Core Principles",
         description: "<strong>Definition:</strong> DDRS (Développement Durable et Responsabilité Sociétale / Sustainable Development & Social Responsibility) is the guiding operational framework that integrates ecological protection, social equity, and ethical governance into modern corporate and public policy.<br><br><strong>Basic areas covered:</strong> Environmental preservation and carbon reduction, social wellbeing and community impact, and ethical business innovation.<br><br><strong>Importance of discussing these areas:</strong> Discussing DDRS topics is vital to equip future transport and aviation professionals with the critical thinking needed to balance continuous operational growth with long-term environmental and social sustainability.",
         detailsUrl: "ddrs.html",
@@ -161,11 +174,67 @@
       }
     ];
 
+    const modulesData = [
+      {
+        id: 1,
+        name: "Module 1",
+        subtitle: "Travel & Transport",
+        supertitle: "GSEA SEMESTER 1 - MODULE 1: TRAVEL & TRANSPORT (2)",
+        // Terracotta Theme (Original)
+        primary: "#b85d42",
+        primaryDark: "#9e4e37",
+        primaryDarker: "#853f2c",
+        accent: "#c29b38",
+        accentDark: "#a8842c",
+        accentDarker: "#8f6e21",
+        highlight: "#fde047",
+        activeMenuBg: "rgba(254, 243, 199, 0.8)",
+        activeMenuText: "#b85d42",
+        activeMenuBorder: "#c29b38",
+        pages: createModulePages(1)
+      },
+      {
+        id: 2,
+        name: "Module 2",
+        subtitle: "Social Policy & Innovation",
+        supertitle: "GSEA SEMESTER 1 - MODULE 2: SOCIAL POLICY & INNOVATION",
+        // Slate Blue Theme
+        primary: "#365f88",
+        primaryDark: "#274868",
+        primaryDarker: "#1d364f",
+        accent: "#4d78a3",
+        accentDark: "#3b6284",
+        accentDarker: "#2d4d6a",
+        highlight: "#bae6fd",
+        activeMenuBg: "rgba(54, 95, 136, 0.08)",
+        activeMenuText: "#365f88",
+        activeMenuBorder: "#4d78a3",
+        pages: createModulePages(2)
+      },
+      {
+        id: 3,
+        name: "Module 3",
+        subtitle: "Environmental Management",
+        supertitle: "GSEA SEMESTER 1 - MODULE 3: ENVIRONMENTAL MANAGEMENT",
+        // Olive Green Theme
+        primary: "#526e38",
+        primaryDark: "#3e5429",
+        primaryDarker: "#2c3c1d",
+        accent: "#6c8c4c",
+        accentDark: "#57723c",
+        accentDarker: "#43592d",
+        highlight: "#d9f99d",
+        activeMenuBg: "rgba(82, 110, 56, 0.08)",
+        activeMenuText: "#526e38",
+        activeMenuBorder: "#6c8c4c",
+        pages: createModulePages(3)
+      }
+    ];
+
+    let currentModuleIndex = 0;
     let currentIndex = 0;
 
     function initDeck() {
-      if (deckPages.length === 0) return;
-
       document.getElementById('prev-btn').addEventListener('click', () => stepDeck(-1));
       document.getElementById('next-btn').addEventListener('click', () => stepDeck(1));
 
@@ -184,30 +253,161 @@
         });
       }
 
-      // Populate static skills badge container once
+      // Read initial module from URL hash if provided (#module1, #module2, #module3)
+      const hash = window.location.hash.toLowerCase();
+      let initialMod = 0;
+      if (hash.includes('mod2') || hash.includes('module2') || hash.includes('module-2')) {
+        initialMod = 1;
+      } else if (hash.includes('mod3') || hash.includes('module3') || hash.includes('module-3')) {
+        initialMod = 2;
+      }
+
+      switchModule(initialMod, 0);
+    }
+
+    function renderModuleSelector() {
+      const container = document.getElementById('module-selector-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      modulesData.forEach((mod, idx) => {
+        const isSelected = idx === currentModuleIndex;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        btn.setAttribute('aria-label', `Select ${mod.name}`);
+
+        btn.className = `flex-1 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 py-2 sm:py-2.5 px-2 sm:px-3 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer select-none ${
+          isSelected ? 'shadow-md scale-[1.01]' : 'hover:scale-[1.005]'
+        }`;
+
+        if (isSelected) {
+          btn.style.backgroundColor = mod.primary;
+          btn.style.borderColor = mod.primaryDark;
+          btn.style.borderWidth = '2px';
+          btn.style.borderStyle = 'solid';
+          btn.style.color = '#ffffff';
+          btn.style.boxShadow = `0 4px 12px ${mod.primary}40`;
+        } else {
+          btn.style.backgroundColor = '#ffffff';
+          btn.style.borderColor = mod.primary + '55';
+          btn.style.borderWidth = '2px';
+          btn.style.borderStyle = 'solid';
+          btn.style.color = mod.primary;
+          btn.onmouseenter = () => {
+            btn.style.backgroundColor = mod.activeMenuBg;
+            btn.style.borderColor = mod.primary;
+          };
+          btn.onmouseleave = () => {
+            btn.style.backgroundColor = '#ffffff';
+            btn.style.borderColor = mod.primary + '55';
+          };
+        }
+
+        btn.innerHTML = `
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full text-[10px] font-black shrink-0 ${
+            isSelected ? 'bg-white/25 text-white' : 'text-white'
+          }" style="${!isSelected ? `background-color: ${mod.primary};` : ''}">
+            ${idx + 1}
+          </span>
+          <span class="tracking-wide">${mod.name}</span>
+          <span class="text-[10px] font-normal hidden md:inline opacity-80 truncate">
+            (${mod.subtitle})
+          </span>
+        `;
+
+        btn.addEventListener('click', () => {
+          switchModule(idx, 0);
+        });
+
+        container.appendChild(btn);
+      });
+    }
+
+    function switchModule(modIdx, cardIdx = 0) {
+      if (modIdx < 0 || modIdx >= modulesData.length) return;
+      currentModuleIndex = modIdx;
+      currentIndex = cardIdx;
+
+      applyTheme(modulesData[currentModuleIndex]);
+      buildMenu();
+      renderCard(currentIndex);
+      renderModuleSelector();
+
+      // Update URL hash without causing jumps
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', `#module${modIdx + 1}`);
+      }
+    }
+
+    function applyTheme(mod) {
+      // Header background and border
+      const header = document.getElementById('deck-header');
+      if (header) {
+        header.style.backgroundColor = mod.primary;
+        header.style.borderColor = mod.primaryDark;
+      }
+
+      // Header icon container
+      const iconBox = document.getElementById('deck-icon-box');
+      if (iconBox) {
+        iconBox.style.backgroundColor = mod.accent;
+      }
+
+      // Header supertitle
+      const supertitle = document.getElementById('deck-supertitle');
+      if (supertitle) {
+        supertitle.textContent = mod.supertitle;
+        supertitle.style.color = mod.highlight;
+      }
+
+      // Counter badge
+      const counterBadge = document.getElementById('counter-badge');
+      if (counterBadge) {
+        counterBadge.style.backgroundColor = mod.primaryDark;
+        counterBadge.style.borderColor = mod.primaryDarker;
+      }
+
+      // Prev and Next navigation buttons
+      const prevBtn = document.getElementById('prev-btn');
+      if (prevBtn) {
+        prevBtn.style.backgroundColor = mod.primaryDark;
+        prevBtn.style.borderColor = mod.primaryDarker;
+        prevBtn.onmouseenter = () => { if (!prevBtn.disabled) prevBtn.style.backgroundColor = mod.primaryDarker; };
+        prevBtn.onmouseleave = () => { if (!prevBtn.disabled) prevBtn.style.backgroundColor = mod.primaryDark; };
+      }
+
+      const nextBtn = document.getElementById('next-btn');
+      if (nextBtn) {
+        nextBtn.style.backgroundColor = mod.accent;
+        nextBtn.style.borderColor = mod.accentDark;
+        nextBtn.onmouseenter = () => { if (!nextBtn.disabled) nextBtn.style.backgroundColor = mod.accentDark; };
+        nextBtn.onmouseleave = () => { if (!nextBtn.disabled) nextBtn.style.backgroundColor = mod.accent; };
+      }
+
+      // Skills Footer Area with module color harmony
       const skillsEl = document.getElementById('card-skills');
       if (skillsEl) {
         skillsEl.innerHTML = `
-          <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide text-[#b85d42]">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
-          <div class="flex flex-col"><span class="text-xs font-bold uppercase text-[#c29b38]">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
+          <div class="flex flex-col"><span class="text-sm font-black italic tracking-wide" style="color: ${mod.primary};">FLUENCY</span><span class="text-[8px] text-slate-400 font-mono">/ˈfluː.ən.si/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-bold uppercase" style="color: ${mod.accent};">Grammar</span><span class="text-[8px] text-slate-400 font-mono">/ˈɡræm.ər/</span></div>
           <div class="flex flex-col"><span class="text-[11px] font-extrabold normal-case text-slate-700 underline decoration-slate-300">DDRS & TOEIC</span><span class="text-[8px] text-slate-400 font-mono">/diː-diː-ɑː-ɛs & ˈtəʊ.ɪk/</span></div>
-          <div class="flex flex-col"><span class="text-xs font-semibold italic text-[#9e4e37]">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
+          <div class="flex flex-col"><span class="text-xs font-semibold italic" style="color: ${mod.primaryDark};">Pronunciation</span><span class="text-[8px] text-slate-400 font-mono">/prəˌnʌn.siˈeɪ.shən/</span></div>
           <div class="flex flex-col"><span class="text-xs font-bold uppercase tracking-wider text-teal-700">Comprehension</span><span class="text-[8px] text-slate-400 font-mono">/ˌkɒm.prɪˈhen.ʃən/</span></div>
           <div class="flex flex-col"><span class="text-sm font-black italic text-sky-700">Discussion</span><span class="text-[8px] text-slate-400 font-mono">/dɪˈskʌʃ.ən/</span></div>
           <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
-          <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest text-[#c29b38]">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
+          <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
         `;
       }
-
-      buildMenu();
-      renderCard(0);
     }
 
     function buildMenu() {
       const menuEl = document.getElementById('deck-menu');
+      if (!menuEl) return;
       menuEl.innerHTML = '';
+      const mod = modulesData[currentModuleIndex];
 
-      deckPages.forEach((page, idx) => {
+      mod.pages.forEach((page, idx) => {
         const item = document.createElement('button');
         item.type = 'button';
         item.innerHTML = `
@@ -221,26 +421,51 @@
 
     function updateMenu(activeIdx) {
       const menuEl = document.getElementById('deck-menu');
+      if (!menuEl) return;
       const items = menuEl.querySelectorAll('button');
+      const mod = modulesData[currentModuleIndex];
+
       items.forEach((item, idx) => {
         const isActive = idx === activeIdx;
         item.className = `w-full text-left px-3 py-2 text-xs font-medium transition-all flex items-center justify-between border-b border-slate-100 cursor-pointer ${
           isActive 
-            ? 'bg-amber-50/80 text-[#b85d42] font-bold shadow-md shadow-slate-400/40' 
+            ? 'font-bold shadow-md shadow-slate-400/40' 
             : 'text-slate-700 hover:bg-slate-100'
         }`;
-        item.style.borderLeft = isActive ? '4px solid #c29b38' : '4px solid transparent';
+        if (isActive) {
+          item.style.backgroundColor = mod.activeMenuBg;
+          item.style.color = mod.activeMenuText;
+          item.style.borderLeft = `4px solid ${mod.activeMenuBorder}`;
+        } else {
+          item.style.backgroundColor = '';
+          item.style.color = '';
+          item.style.borderLeft = '4px solid transparent';
+        }
       });
     }
 
     function renderCard(idx) {
-      if (idx < 0 || idx >= deckPages.length) return;
+      const mod = modulesData[currentModuleIndex];
+      const pages = mod.pages;
+      if (idx < 0 || idx >= pages.length) return;
       currentIndex = idx;
 
-      const page = deckPages[currentIndex];
+      const page = pages[currentIndex];
 
-      document.getElementById('card-tag').textContent = page.tag;
-      document.getElementById('card-heading').textContent = page.title;
+      // Update badge tag
+      const cardTag = document.getElementById('card-tag');
+      const cardTagWrapper = document.getElementById('card-tag-wrapper');
+      cardTag.textContent = page.tag;
+      if (cardTagWrapper) {
+        cardTagWrapper.style.backgroundColor = mod.primary;
+        cardTagWrapper.style.borderColor = mod.primaryDark;
+      }
+
+      // Update card title
+      const cardHeading = document.getElementById('card-heading');
+      cardHeading.textContent = page.title;
+      cardHeading.style.color = mod.primary;
+
       document.getElementById('card-desc').innerHTML = page.description;
 
       const actionContainer = document.getElementById('action-links-container');
@@ -250,7 +475,10 @@
       if (page.detailsUrl) {
         footerInstruction.textContent = "Click below to view the official government DD&RS framework:";
         const detailsBtn = document.createElement('a');
-        detailsBtn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        detailsBtn.className = "inline-flex items-center space-x-2 text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        detailsBtn.style.backgroundColor = mod.primary;
+        detailsBtn.onmouseenter = () => detailsBtn.style.backgroundColor = mod.primaryDark;
+        detailsBtn.onmouseleave = () => detailsBtn.style.backgroundColor = mod.primary;
         detailsBtn.href = page.detailsUrl;
         detailsBtn.target = "_blank";
         detailsBtn.rel = "noopener noreferrer";
@@ -268,12 +496,12 @@
           imageContainer.classList.add('hidden');
         }
 
-        document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${deckPages.length}`;
+        document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${pages.length}`;
         document.getElementById('deck-title').textContent = page.title;
-        document.getElementById('footer-status').textContent = `Active: ${page.title}`;
+        document.getElementById('footer-status').textContent = `Active: ${mod.name} - ${page.title}`;
 
         document.getElementById('prev-btn').disabled = (currentIndex === 0);
-        document.getElementById('next-btn').disabled = (currentIndex === deckPages.length - 1);
+        document.getElementById('next-btn').disabled = (currentIndex === pages.length - 1);
 
         updateMenu(currentIndex);
         return;
@@ -284,52 +512,44 @@
       const leftButtonsGroup = document.createElement('div');
       leftButtonsGroup.className = "flex flex-wrap items-center gap-2";
 
-      if (page.lessonPlanUrl) {
+      const createActionBtn = (href, label) => {
         const btn = document.createElement('a');
-        btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
-        btn.href = page.lessonPlanUrl;
+        btn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
+        btn.style.backgroundColor = mod.primary;
+        btn.onmouseenter = () => btn.style.backgroundColor = mod.primaryDark;
+        btn.onmouseleave = () => btn.style.backgroundColor = mod.primary;
+        btn.href = href;
         btn.target = "_blank";
         btn.rel = "noopener noreferrer";
-        btn.innerHTML = "<span>Lesson Plan</span>";
-        leftButtonsGroup.appendChild(btn);
+        btn.innerHTML = `<span>${label}</span>`;
+        return btn;
+      };
+
+      if (page.lessonPlanUrl) {
+        leftButtonsGroup.appendChild(createActionBtn(page.lessonPlanUrl, "Lesson Plan"));
       }
 
       if (page.objectivesUrl) {
-        const btn = document.createElement('a');
-        btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
-        btn.href = page.objectivesUrl;
-        btn.target = "_blank";
-        btn.rel = "noopener noreferrer";
-        btn.innerHTML = "<span>Objectives</span>";
-        leftButtonsGroup.appendChild(btn);
+        leftButtonsGroup.appendChild(createActionBtn(page.objectivesUrl, "Objectives"));
       }
 
       const materialsUrl = page.additionalMaterialsUrl || page.url;
       if (materialsUrl) {
-        const btn = document.createElement('a');
-        btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
-        btn.href = materialsUrl;
-        btn.target = "_blank";
-        btn.rel = "noopener noreferrer";
-        btn.innerHTML = "<span>Additional Materials</span>";
-        leftButtonsGroup.appendChild(btn);
+        leftButtonsGroup.appendChild(createActionBtn(materialsUrl, "Additional Materials"));
       }
 
       if (page.classReviewUrl && !page.classReviewUrl.includes("YOUR_REVIEW_ID")) {
-        const reviewBtn = document.createElement('a');
-        reviewBtn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
-        reviewBtn.href = page.classReviewUrl;
-        reviewBtn.target = "_blank";
-        reviewBtn.rel = "noopener noreferrer";
-        reviewBtn.innerHTML = "<span>Revision</span>";
-        leftButtonsGroup.appendChild(reviewBtn);
+        leftButtonsGroup.appendChild(createActionBtn(page.classReviewUrl, "Revision"));
       }
 
       actionContainer.appendChild(leftButtonsGroup);
 
       if (page.pdfUrl && !page.pdfUrl.includes("INSERT_YOUR_PDF_LINK_HERE")) {
         const pdfBtn = document.createElement('a');
-        pdfBtn.className = "inline-flex items-center space-x-2 bg-[#c29b38] hover:bg-[#a8842c] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto";
+        pdfBtn.className = "inline-flex items-center space-x-2 text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all ml-auto";
+        pdfBtn.style.backgroundColor = mod.accent;
+        pdfBtn.onmouseenter = () => pdfBtn.style.backgroundColor = mod.accentDark;
+        pdfBtn.onmouseleave = () => pdfBtn.style.backgroundColor = mod.accent;
         pdfBtn.href = page.pdfUrl;
         pdfBtn.target = "_blank";
         pdfBtn.rel = "noopener noreferrer";
@@ -348,19 +568,20 @@
         imageContainer.classList.add('hidden');
       }
 
-      document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${deckPages.length}`;
+      document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${pages.length}`;
       document.getElementById('deck-title').textContent = page.title;
-      document.getElementById('footer-status').textContent = `Active: ${page.title}`;
+      document.getElementById('footer-status').textContent = `Active: ${mod.name} - ${page.title}`;
 
       document.getElementById('prev-btn').disabled = (currentIndex === 0);
-      document.getElementById('next-btn').disabled = (currentIndex === deckPages.length - 1);
+      document.getElementById('next-btn').disabled = (currentIndex === pages.length - 1);
 
       updateMenu(currentIndex);
     }
 
     function stepDeck(direction) {
+      const mod = modulesData[currentModuleIndex];
       const newIndex = currentIndex + direction;
-      if (newIndex >= 0 && newIndex < deckPages.length) {
+      if (newIndex >= 0 && newIndex < mod.pages.length) {
         renderCard(newIndex);
       }
     }
