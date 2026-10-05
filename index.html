@@ -8,14 +8,17 @@
   <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
   <style>
     /* Theme transitions */
-    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge {
-      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
     }
 
     /* Floating module box styling - separated box positioned under the frame to the right */
     .module-selector-wrapper {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 14px;
       padding-right: 16px;
     }
@@ -129,6 +132,19 @@
 
     <!-- Module Selector Bar at Bottom - Compact, Neat & Positioned under Worksheet button -->
     <div class="module-selector-wrapper">
+      <!-- Separate Box for eCampus Link Button -->
+      <div class="module-selector-box">
+        <a id="ecampus-btn"
+           href="https://e-campus.enac.fr/moodle/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visit eCampus Moodle"
+           class="px-4 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs font-bold tracking-wide transition-all border cursor-pointer select-none inline-flex items-center justify-center no-underline shadow-md"
+           style="background-color: #b85d42; border-color: #9e4e37; border-width: 1.5px; border-style: solid; color: #ffffff; box-shadow: 0 2px 8px rgba(184, 93, 66, 0.25);">
+          eCampus
+        </a>
+      </div>
+      <!-- Separate Box for Module Selection Buttons -->
       <div class="module-selector-box">
         <div id="module-selector-container" class="module-buttons-group">
           <!-- Populated via script -->
@@ -457,6 +473,22 @@
           <div class="flex flex-col"><span class="text-xs font-extrabold uppercase text-rose-600">CORRECTION</span><span class="text-[8px] text-slate-400 font-mono">/kəˈrek.ʃən/</span></div>
           <div class="flex flex-col"><span class="text-[11px] font-extrabold tracking-widest" style="color: ${mod.accent};">GO / NO GO</span><span class="text-[8px] text-slate-400 font-mono">/ɡəʊ / nəʊ ɡəʊ/</span></div>
         `;
+      }
+
+      // eCampus button matching module theme
+      const ecampusBtn = document.getElementById('ecampus-btn');
+      if (ecampusBtn) {
+        ecampusBtn.style.backgroundColor = mod.primary;
+        ecampusBtn.style.borderColor = mod.primaryDark;
+        ecampusBtn.style.boxShadow = `0 2px 8px ${mod.primary}40`;
+        ecampusBtn.onmouseenter = () => {
+          ecampusBtn.style.backgroundColor = mod.primaryDark;
+          ecampusBtn.style.borderColor = mod.primaryDarker;
+        };
+        ecampusBtn.onmouseleave = () => {
+          ecampusBtn.style.backgroundColor = mod.primary;
+          ecampusBtn.style.borderColor = mod.primaryDark;
+        };
       }
     }
 
