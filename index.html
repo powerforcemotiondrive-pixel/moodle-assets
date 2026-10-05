@@ -11,6 +11,35 @@
     #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge {
       transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
     }
+
+    /* Floating module box styling - separated box positioned under the frame to the right */
+    .module-selector-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 14px;
+      padding-right: 16px;
+    }
+    @media (min-width: 640px) {
+      .module-selector-wrapper {
+        padding-right: 24px;
+      }
+    }
+
+    .module-selector-box {
+      display: inline-flex;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 6px 10px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .module-buttons-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   </style>
 </head>
 <body class="bg-slate-100 min-h-screen flex items-center justify-center">
@@ -98,10 +127,10 @@
       </footer>
     </div>
 
-    <!-- Module Selector Bar at Bottom - Compact, Neat & Right Aligned -->
-    <div class="flex justify-end mt-5 sm:mt-6">
-      <div class="inline-flex items-center gap-2.5 bg-slate-100 p-2.5 sm:p-3 rounded-2xl border border-slate-300 shadow-md">
-        <div id="module-selector-container" class="flex items-center gap-3 sm:gap-4">
+    <!-- Module Selector Bar at Bottom - Compact, Neat & Positioned under Worksheet button -->
+    <div class="module-selector-wrapper">
+      <div class="module-selector-box">
+        <div id="module-selector-container" class="module-buttons-group">
           <!-- Populated via script -->
         </div>
       </div>
