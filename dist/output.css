@@ -246,9 +246,6 @@
   .ml-auto {
     margin-left: auto;
   }
-  .box-border {
-    box-sizing: border-box;
-  }
   .block {
     display: block;
   }
@@ -263,6 +260,9 @@
   }
   .inline-flex {
     display: inline-flex;
+  }
+  .h-3\.5 {
+    height: calc(var(--spacing) * 3.5);
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -281,6 +281,9 @@
   }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-3\.5 {
+    width: calc(var(--spacing) * 3.5);
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -419,9 +422,6 @@
   .gap-y-2\.5 {
     row-gap: calc(var(--spacing) * 2.5);
   }
-  .gap-y-3 {
-    row-gap: calc(var(--spacing) * 3);
-  }
   :where(.divide-y > :not(:last-child)) {
     --tw-divide-y-reverse: 0;
     border-bottom-style: var(--tw-border-style);
@@ -442,9 +442,6 @@
   }
   .overflow-hidden {
     overflow: hidden;
-  }
-  .overflow-x-hidden {
-    overflow-x: hidden;
   }
   .overflow-y-auto {
     overflow-y: auto;
@@ -555,6 +552,9 @@
   }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .stroke-\[2\.5\] {
+    stroke-width: 2.5;
   }
   .object-cover {
     object-fit: cover;
