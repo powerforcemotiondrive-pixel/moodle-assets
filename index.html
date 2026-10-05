@@ -156,20 +156,8 @@
         tag: "Module 1 - Focus",
         title: "DDRS - Framework & Core Principles",
         description: "<strong>Definition:</strong> DDRS (Développement Durable et Responsabilité Sociétale / Sustainable Development & Social Responsibility) is the guiding operational framework that integrates ecological protection, social equity, and ethical governance into modern corporate and public policy.<br><br><strong>Basic areas covered:</strong> Environmental preservation and carbon reduction, social wellbeing and community impact, and ethical business innovation.<br><br><strong>Importance of discussing these areas:</strong> Discussing DDRS topics is vital to equip future transport and aviation professionals with the critical thinking needed to balance continuous operational growth with long-term environmental and social sustainability.",
-        url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266680",
-        pdfUrl: "agmod1.pdf",
-        lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266892",
-        objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266887",
-        classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267456",
+        detailsUrl: "ddrs.html",
         imageUrl: "https://i.imgur.com/AzH2ypU.png"
-      },
-      {
-        tag: "Module 1 - Revision",
-        title: "Revision & Resources",
-        description: "Consolidate your learning with our review hubs. Continuous practice of our discussion strategies, grammar rules, DDRS, and TOEIC exercises ensures lasting professional fluency.<br><br><em>Subject overview:</em> Access your glossaries, grammar files, and reference materials below to support your studies for Module 1.",
-        glossaryUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266680",
-        grammarUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266693",
-        imageUrl: "https://i.imgur.com/kTgThCZ.png"
       }
     ];
 
@@ -259,6 +247,40 @@
       const footerInstruction = document.getElementById('footer-instruction');
       actionContainer.innerHTML = '';
 
+      if (page.detailsUrl) {
+        footerInstruction.textContent = "Click below to view the official government DD&RS framework:";
+        const detailsBtn = document.createElement('a');
+        detailsBtn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3.5 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all cursor-pointer";
+        detailsBtn.href = page.detailsUrl;
+        detailsBtn.target = "_blank";
+        detailsBtn.rel = "noopener noreferrer";
+        detailsBtn.innerHTML = "<span>Details</span>";
+        actionContainer.appendChild(detailsBtn);
+
+        const imageContainer = document.getElementById('image-container');
+        const imgEl = document.getElementById('card-image');
+
+        if (page.imageUrl && page.imageUrl.trim() !== "") {
+          imgEl.src = page.imageUrl;
+          imageContainer.classList.remove('hidden');
+        } else {
+          imgEl.src = "";
+          imageContainer.classList.add('hidden');
+        }
+
+        document.getElementById('counter-badge').textContent = `${currentIndex + 1} of ${deckPages.length}`;
+        document.getElementById('deck-title').textContent = page.title;
+        document.getElementById('footer-status').textContent = `Active: ${page.title}`;
+
+        document.getElementById('prev-btn').disabled = (currentIndex === 0);
+        document.getElementById('next-btn').disabled = (currentIndex === deckPages.length - 1);
+
+        updateMenu(currentIndex);
+        return;
+      }
+
+      footerInstruction.textContent = "Click below to open this specific page directly in your workspace tab.";
+
       const leftButtonsGroup = document.createElement('div');
       leftButtonsGroup.className = "flex flex-wrap items-center gap-2";
 
@@ -282,10 +304,8 @@
         leftButtonsGroup.appendChild(btn);
       }
 
-      const isRevisionPage = Boolean(page.glossaryUrl || page.grammarUrl);
       const materialsUrl = page.additionalMaterialsUrl || page.url;
-
-      if (!isRevisionPage && materialsUrl) {
+      if (materialsUrl) {
         const btn = document.createElement('a');
         btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
         btn.href = materialsUrl;
@@ -295,34 +315,14 @@
         leftButtonsGroup.appendChild(btn);
       }
 
-      if (isRevisionPage) {
-        footerInstruction.textContent = "Click below to open your revision resources:";
-        const revisionLinks = [
-          { label: "Revision (Glossary)", href: page.glossaryUrl },
-          { label: "Revision (Grammar)", href: page.grammarUrl }
-        ];
-        revisionLinks.forEach(linkObj => {
-          if (linkObj.href) {
-            const btn = document.createElement('a');
-            btn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
-            btn.href = linkObj.href;
-            btn.target = "_blank";
-            btn.rel = "noopener noreferrer";
-            btn.innerHTML = `<span>${linkObj.label}</span>`;
-            leftButtonsGroup.appendChild(btn);
-          }
-        });
-      } else {
-        footerInstruction.textContent = "Click below to open this specific page directly in your workspace tab.";
-        if (page.classReviewUrl && !page.classReviewUrl.includes("YOUR_REVIEW_ID")) {
-          const reviewBtn = document.createElement('a');
-          reviewBtn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
-          reviewBtn.href = page.classReviewUrl;
-          reviewBtn.target = "_blank";
-          reviewBtn.rel = "noopener noreferrer";
-          reviewBtn.innerHTML = "<span>Revision</span>";
-          leftButtonsGroup.appendChild(reviewBtn);
-        }
+      if (page.classReviewUrl && !page.classReviewUrl.includes("YOUR_REVIEW_ID")) {
+        const reviewBtn = document.createElement('a');
+        reviewBtn.className = "inline-flex items-center space-x-2 bg-[#b85d42] hover:bg-[#9e4e37] text-white px-3 py-2 rounded-lg text-xs font-bold shadow-md shadow-slate-400/40 transition-all";
+        reviewBtn.href = page.classReviewUrl;
+        reviewBtn.target = "_blank";
+        reviewBtn.rel = "noopener noreferrer";
+        reviewBtn.innerHTML = "<span>Revision</span>";
+        leftButtonsGroup.appendChild(reviewBtn);
       }
 
       actionContainer.appendChild(leftButtonsGroup);
