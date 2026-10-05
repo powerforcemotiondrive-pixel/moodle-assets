@@ -139,71 +139,107 @@
 
   <!-- Script Configuration -->
   <script>
-    const createModulePages = (modNumber) => [
-      {
-        tag: `Module ${modNumber} - Session 1`,
-        title: "Session 1 - Introduction & Travel Anecdote",
-        description: "Welcome to our new module on Social Policy, Research and Innovation, and Environmental Management! In our interactive sessions, we will be working extensively on discussion, grammar correction, DDRS, and TOEIC-related exercises to build your professional proficiency.<br><br><em>Subject overview:</em> An introduction to travel and transport themes alongside personal travel anecdotes.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
-        url: "session1/admat1.html",
-        additionalMaterialsUrl: "session1/admat1.html",
-        pdfUrl: "agmod1.pdf",
-        lessonPlanUrl: "session1/plan1.html",
-        objectivesUrl: "session1/obj1.html",
-        classReviewUrl: "session1/rev1.html",
-        imageUrl: "images/card1.png"
-      },
-      {
-        tag: `Module ${modNumber} - Session 2`,
-        title: "Session 2 - Evolution of Transport",
-        description: "Welcome back! Continuing our focus on Social Policy, Research, Innovation, and Environmental Management, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Exploring how transport systems have evolved over time and their societal impacts.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
-        url: "session2/admat1.html",
-        additionalMaterialsUrl: "session2/admat1.html",
-        pdfUrl: "agmod1.pdf",
-        lessonPlanUrl: "session2/plan2.html",
-        objectivesUrl: "session2/obj2.html",
-        classReviewUrl: "session2/rev1.html",
-        imageUrl: "images/card2.png"
-      },
-      {
-        tag: `Module ${modNumber} - Session 3`,
-        title: "Session 3 - Overtourism",
-        description: "Welcome to Session 3! In this class, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises within the framework of Social Policy, Research and Innovation, and Environmental Management.<br><br><em>Subject overview:</em> Analyzing the environmental and social challenges brought by overtourism in popular destinations.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
-        url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266758",
-        pdfUrl: "agmod1.pdf",
-        lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266897",
-        objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266889",
-        classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267460",
-        imageUrl: "images/card3.png"
-      },
-      {
-        tag: `Module ${modNumber} - Session 4`,
-        title: "Session 4 - Sustainable and Eco-tourism",
-        description: "Welcome to Session 4! As we examine environmental management and green innovation, we will continue working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Investigating sustainable practices, green innovation, and eco-friendly alternatives in modern tourism.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
-        url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266780",
-        pdfUrl: "agmod1.pdf",
-        lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267455",
-        objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266891",
-        classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267462",
-        imageUrl: "images/card4.png"
-      },
-      {
-        tag: `Module ${modNumber} - Session 5`,
-        title: "Session 5 - Formative Evaluation",
-        description: "Welcome to Session 5! Throughout this module, we have worked on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Formative Evaluation — Design an eco-friendly holiday itinerary or compare two cities with different tourism policies + Targets.<br><br>For this session's evaluation, you will receive a GO / NO GO based on your performance.",
-        url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266604",
-        pdfUrl: "agmod1.pdf",
-        lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267409",
-        objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266887",
-        imageUrl: "https://i.imgur.com/9h4JS6u.png"
-      },
-      {
-        tag: `Module ${modNumber} - Focus`,
-        title: "DDRS - Framework & Core Principles",
-        description: "<strong>Definition:</strong> DDRS (Développement Durable et Responsabilité Sociétale / Sustainable Development & Social Responsibility) is the guiding operational framework that integrates ecological protection, social equity, and ethical governance into modern corporate and public policy.<br><br><strong>Basic areas covered:</strong> Environmental preservation and carbon reduction, social wellbeing and community impact, and ethical business innovation.<br><br><strong>Importance of discussing these areas:</strong> Discussing DDRS topics is vital to equip future transport and aviation professionals with the critical thinking needed to balance continuous operational growth with long-term environmental and social sustainability.",
-        detailsUrl: "ddrs.html",
-        imageUrl: "https://i.imgur.com/AzH2ypU.png"
-      }
-    ];
+    const createModulePages = (modNumber) => {
+      const sessionTitles = {
+        1: {
+          s1: "Session 1 - Introduction & Travel Anecdote",
+          s2: "Session 2 - Evolution of Transport",
+          s3: "Session 3 - Overtourism",
+          s4: "Session 4 - Sustainable and Eco-tourism"
+        },
+        2: {
+          s1: "Session 1: Extreme Weather",
+          s2: "Session 2: Sustainable Cities",
+          s3: "Session 3: Building and Supporting Arguments",
+          s4: "Session 4: Biodiversity in Urban Areas and Airports"
+        }
+      };
+
+      const titles = sessionTitles[modNumber] || sessionTitles[1];
+
+      const moduleImages = {
+        1: {
+          card1: "images/card1.png",
+          card2: "images/card2.png",
+          card3: "images/card3.png",
+          card4: "images/card4.png"
+        },
+        2: {
+          card1: "images/m2card1.png",
+          card2: "images/m2card2.png",
+          card3: "images/m2card3.png",
+          card4: "images/m2card4.png"
+        }
+      };
+
+      const images = moduleImages[modNumber] || moduleImages[1];
+
+      return [
+        {
+          tag: `Module ${modNumber} - Session 1`,
+          title: titles.s1,
+          description: "Welcome to our new module on Social Policy, Research and Innovation, and Environmental Management! In our interactive sessions, we will be working extensively on discussion, grammar correction, DDRS, and TOEIC-related exercises to build your professional proficiency.<br><br><em>Subject overview:</em> An introduction to travel and transport themes alongside personal travel anecdotes.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "session1/admat1.html",
+          additionalMaterialsUrl: "session1/admat1.html",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "session1/plan1.html",
+          objectivesUrl: "session1/obj1.html",
+          classReviewUrl: "session1/rev1.html",
+          imageUrl: images.card1
+        },
+        {
+          tag: `Module ${modNumber} - Session 2`,
+          title: titles.s2,
+          description: "Welcome back! Continuing our focus on Social Policy, Research, Innovation, and Environmental Management, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Exploring how transport systems have evolved over time and their societal impacts.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "session2/admat1.html",
+          additionalMaterialsUrl: "session2/admat1.html",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "session2/plan2.html",
+          objectivesUrl: "session2/obj2.html",
+          classReviewUrl: "session2/rev1.html",
+          imageUrl: images.card2
+        },
+        {
+          tag: `Module ${modNumber} - Session 3`,
+          title: titles.s3,
+          description: "Welcome to Session 3! In this class, we will be working on discussion, grammar correction, DDRS, and TOEIC-related exercises within the framework of Social Policy, Research and Innovation, and Environmental Management.<br><br><em>Subject overview:</em> Analyzing the environmental and social challenges brought by overtourism in popular destinations.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266758",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266897",
+          objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266889",
+          classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267460",
+          imageUrl: images.card3
+        },
+        {
+          tag: `Module ${modNumber} - Session 4`,
+          title: titles.s4,
+          description: "Welcome to Session 4! As we examine environmental management and green innovation, we will continue working on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Investigating sustainable practices, green innovation, and eco-friendly alternatives in modern tourism.<br><br>All our work this module builds progressively toward your Formative Evaluation in Session 5 (Design an eco-friendly holiday itinerary or compare two cities with different tourism policies), for which you will receive a GO / NO GO.",
+          url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266780",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267455",
+          objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266891",
+          classReviewUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267462",
+          imageUrl: images.card4
+        },
+        {
+          tag: `Module ${modNumber} - Session 5`,
+          title: "Session 5 - Formative Evaluation",
+          description: "Welcome to Session 5! Throughout this module, we have worked on discussion, grammar correction, DDRS, and TOEIC-related exercises.<br><br><em>Subject overview:</em> Formative Evaluation — Design an eco-friendly holiday itinerary or compare two cities with different tourism policies + Targets.<br><br>For this session's evaluation, you will receive a GO / NO GO based on your performance.",
+          url: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266604",
+          pdfUrl: "agmod1.pdf",
+          lessonPlanUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=267409",
+          objectivesUrl: "https://e-campus.enac.fr/moodle/mod/page/view.php?id=266887",
+          imageUrl: "https://i.imgur.com/9h4JS6u.png"
+        },
+        {
+          tag: `Module ${modNumber} - Focus`,
+          title: "DDRS - Framework & Core Principles",
+          description: "<strong>Definition:</strong> DDRS (Développement Durable et Responsabilité Sociétale / Sustainable Development & Social Responsibility) is the guiding operational framework that integrates ecological protection, social equity, and ethical governance into modern corporate and public policy.<br><br><strong>Basic areas covered:</strong> Environmental preservation and carbon reduction, social wellbeing and community impact, and ethical business innovation.<br><br><strong>Importance of discussing these areas:</strong> Discussing DDRS topics is vital to equip future transport and aviation professionals with the critical thinking needed to balance continuous operational growth with long-term environmental and social sustainability.",
+          detailsUrl: "ddrs.html",
+          imageUrl: "images/card5.png"
+        }
+      ];
+    };
 
     const modulesData = [
       {
