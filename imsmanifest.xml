@@ -54,6 +54,9 @@
       <!-- Main course entry file -->
       <file href="index.html"/>
       <file href="ddrs.html"/>
+      <file href="ddrs1.html"/>
+      <file href="ddrs2.html"/>
+      <file href="ddrs3.html"/>
       
       <!-- Compiled Tailwind CSS stylesheets -->
       <file href="dist/output.css"/>
