@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DDRS - Cadre Réglementaire &amp; Définitions Officielles (Module 2)</title>
     <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="dist/output.css">
     <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
     <style>
@@ -34,6 +35,27 @@
       .theme-skill-primary { color: #365f88 !important; }
       .theme-skill-accent { color: #4d78a3 !important; }
       .theme-skill-dark { color: #274868 !important; }
+      /* Greyed out / Inactive items */
+      .theme-item-muted {
+        background-color: #f1f5f9 !important;
+        border-color: #cbd5e1 !important;
+      }
+      .theme-item-muted .theme-axe-badge,
+      .theme-item-muted .theme-tag-badge {
+        background-color: #94a3b8 !important;
+        color: #ffffff !important;
+      }
+      .theme-item-muted .theme-axe-num,
+      .theme-item-muted .theme-tag-num {
+        color: #94a3b8 !important;
+      }
+      .theme-item-muted .theme-axe-title,
+      .theme-item-muted .theme-tag-title {
+        color: #64748b !important;
+      }
+      .theme-item-muted p {
+        color: #64748b !important;
+      }
     </style>
 </head>
 <body class="bg-slate-100 min-h-screen">
@@ -92,15 +114,20 @@
             <h2 class="theme-title text-xl sm:text-2xl font-black text-[#365f88] tracking-tight">
               Développement Durable &amp; Responsabilité Sociétale : Tags et Définitions Officielles
             </h2>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Le Référentiel National DD&amp;RS de l'Enseignement Supérieur et de la Recherche (Label DD&amp;RS) structure les engagements écologiques, sociétaux et éthiques des établissements et des grands projets de transport selon 5 axes stratégiques et leurs domaines transversaux d'application.
-            </p>
+            <div>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Le Référentiel National DD&amp;RS de l'Enseignement Supérieur et de la Recherche (Label DD&amp;RS) structure les engagements écologiques, sociétaux et éthiques des établissements et des grands projets de transport selon 5 axes stratégiques et leurs domaines transversaux d'application.
+              </p>
+              <h3 class="text-xs sm:text-sm font-bold text-slate-800 mt-2.5">
+                Axes et compétences DD&amp;RS associés à ce module&nbsp;:
+              </h3>
+            </div>
             
             <!-- List of DDRS Tags and Definitions -->
             <div class="space-y-2.5 pt-2">
               
-              <!-- Axe 1 -->
-              <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
+              <!-- Axe 1 (Non pertinent pour ce module - grisé) -->
+              <div class="theme-item-muted grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5" title="Non pertinent pour ce module">
                 <span class="theme-axe-badge bg-[#365f88] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">Axe 1</span>
                 <div class="flex items-start space-x-2">
                   <span class="theme-axe-num font-black text-[#4d78a3] text-xs sm:text-sm pt-0.2">1.</span>
@@ -159,8 +186,8 @@
                 </div>
               </div>
 
-              <!-- Tag 1 (Item 6) -->
-              <div class="grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5">
+              <!-- Tag 1 (Item 6 - Non pertinent pour ce module - grisé) -->
+              <div class="theme-item-muted grid grid-cols-[60px_1fr] items-center p-2.5 rounded-xl border border-slate-200/70 bg-slate-50/60 shadow-sm gap-2.5" title="Non pertinent pour ce module">
                 <span class="theme-tag-badge bg-[#4d78a3] text-white text-xs font-bold py-1 rounded-md text-center flex items-center justify-center self-center">Tag</span>
                 <div class="flex items-start space-x-2">
                   <span class="theme-tag-num font-black text-[#365f88] text-xs sm:text-sm pt-0.2">6.</span>
@@ -278,3 +305,4 @@
 
 </body>
 </html>
+
