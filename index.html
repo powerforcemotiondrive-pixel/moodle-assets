@@ -7,10 +7,42 @@
   <!-- Tailwind CSS CLI Output -->
   <link rel="stylesheet" href="https://powerforcemotiondrive-pixel.github.io/moodle-assets/output.css">
   <style>
-    /* Theme transitions */
-    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn {
-      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    /* Signature Tactile Micro-Mesh Texture */
+    .textured-surface,
+    #ecampus-btn,
+    .module-buttons-group button[aria-pressed="true"],
+    #action-links-container a {
+      background-image: 
+        /* Layer 1: Soft top-edge spotlight sheen */
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.14) 0%, transparent 70%),
+        /* Layer 2: 45° diagonal highlight ridges (1px line every 4px) */
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0, rgba(255, 255, 255, 0.045) 1px, transparent 0, transparent 4px),
+        /* Layer 3: -45° crosshatch shadow grooves (1px line every 4px) */
+        repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.16) 0, rgba(0, 0, 0, 0.16) 1px, transparent 0, transparent 4px),
+        /* Layer 4: Vertical depth gradient (light top, darker bottom) */
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.14) 100%);
     }
+
+    /* Elements and inactive buttons that must NOT have mesh texture */
+    #deck-icon-box,
+    #counter-badge,
+    #prev-btn,
+    #next-btn,
+    button:disabled,
+    .module-buttons-group button:not([aria-pressed="true"]),
+    .btn-inactive {
+      background-image: none !important;
+    }
+
+    .module-buttons-group button:not([aria-pressed="true"]) {
+      background-color: #ffffff !important;
+    }
+
+    /* Theme transitions */
+    #deck-header, #deck-icon-box, #card-tag-wrapper, #card-heading, #prev-btn, #next-btn, #counter-badge, #ecampus-btn, .module-buttons-group button, #action-links-container a {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+    }
+
 
     /* Floating module box styling - separated box positioned under the frame to the right */
     .module-selector-wrapper {
@@ -275,17 +307,17 @@
         name: "Module 1",
         subtitle: "Travel, Transport & Leisure",
         supertitle: "GSEA SEMESTER 1 - MODULE 1: TRAVEL, TRANSPORT & LEISURE (2)",
-        // Terracotta Theme (Original)
-        primary: "#b85d42",
-        primaryDark: "#9e4e37",
-        primaryDarker: "#853f2c",
-        accent: "#c29b38",
-        accentDark: "#a8842c",
-        accentDarker: "#8f6e21",
-        highlight: "#fde047",
-        activeMenuBg: "rgba(254, 243, 199, 0.8)",
-        activeMenuText: "#b85d42",
-        activeMenuBorder: "#c29b38",
+        // Softened Terracotta / Warm Orange Theme
+        primary: "#c0684f",
+        primaryDark: "#a8543d",
+        primaryDarker: "#904431",
+        accent: "#c99948",
+        accentDark: "#b08137",
+        accentDarker: "#966b2a",
+        highlight: "#fef08a",
+        activeMenuBg: "rgba(254, 243, 199, 0.7)",
+        activeMenuText: "#c0684f",
+        activeMenuBorder: "#c99948",
         pages: createModulePages(1)
       },
       {
@@ -293,17 +325,17 @@
         name: "Module 2",
         subtitle: "Weather & the Environment",
         supertitle: "GSEA SEMESTER 1 - MODULE 2: WEATHER & THE ENVIRONMENT",
-        // Slate Blue Theme
-        primary: "#365f88",
-        primaryDark: "#274868",
-        primaryDarker: "#1d364f",
-        accent: "#4d78a3",
-        accentDark: "#3b6284",
-        accentDarker: "#2d4d6a",
-        highlight: "#bae6fd",
-        activeMenuBg: "rgba(54, 95, 136, 0.08)",
-        activeMenuText: "#365f88",
-        activeMenuBorder: "#4d78a3",
+        // Softened Slate Blue Theme
+        primary: "#46729a",
+        primaryDark: "#375d80",
+        primaryDarker: "#2a4966",
+        accent: "#5e87b0",
+        accentDark: "#4c7297",
+        accentDarker: "#3b5d7e",
+        highlight: "#e0f2fe",
+        activeMenuBg: "rgba(70, 114, 154, 0.09)",
+        activeMenuText: "#46729a",
+        activeMenuBorder: "#5e87b0",
         pages: createModulePages(2)
       },
       {
@@ -311,17 +343,17 @@
         name: "Module 3",
         subtitle: "New Technology",
         supertitle: "GSEA SEMESTER 1 - MODULE 3: NEW TECHNOLOGY",
-        // Olive Green Theme
-        primary: "#526e38",
-        primaryDark: "#3e5429",
-        primaryDarker: "#2c3c1d",
-        accent: "#6c8c4c",
-        accentDark: "#57723c",
-        accentDarker: "#43592d",
-        highlight: "#d9f99d",
-        activeMenuBg: "rgba(82, 110, 56, 0.08)",
-        activeMenuText: "#526e38",
-        activeMenuBorder: "#6c8c4c",
+        // Softened Botanical Sage Green Theme
+        primary: "#5c8147",
+        primaryDark: "#4a6a37",
+        primaryDarker: "#395329",
+        accent: "#769c5c",
+        accentDark: "#62844a",
+        accentDarker: "#4f6c39",
+        highlight: "#ecfccb",
+        activeMenuBg: "rgba(92, 129, 71, 0.09)",
+        activeMenuText: "#5c8147",
+        activeMenuBorder: "#769c5c",
         pages: createModulePages(3)
       }
     ];
